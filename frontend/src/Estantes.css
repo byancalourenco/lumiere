@@ -1,0 +1,146 @@
+/* Estantes */
+
+section#sec-estante {
+    margin-top: 10% !important;
+    background: transparent;
+    width: 100%;
+}
+
+section#sec-estante2 {
+    margin-top: 20% !important;
+    background: transparent;
+    width: 100%;
+}
+
+/*  geral da estante */
+.area-estante {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+}
+
+/* Parte Azul */
+
+.estante-wrapper {
+    width: 100%;
+    background-color: #0f2438;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-radius: 12px 12px 0 0;
+    height: 200px;
+}
+
+.area-carrossel-livros {
+    width: 85%;
+    position: absolute;
+    top: -65%;
+    transform: translateY(0);
+}
+
+.swiper {
+    width: 100%;
+}
+
+/* Setas */
+.swiper-button-prev,
+.swiper-button-next {
+    color: white;
+}
+
+/* Capa */
+.book-cover {
+    width: 80%;
+    border-radius: 22px;
+    object-fit: cover;
+    transition: transform 0.25s ease-in-out;
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+}
+
+/* Parte Bege */
+
+.shelf-container {
+    margin-top: 13%;
+    width: 100%;
+    background-color: #f3eadc;
+    padding: 70px 60px 40px 60px;
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shelf-container h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Botão */
+.edit-btn {
+    background-color: #f3eadc;
+    padding: 10px 24px;
+    border: 2px solid #0f2438;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background-color: #0f2438;
+    color: white;
+}
+
+/* Responsividade*/
+
+/* Telas entre 768px e 1024px (TABLET) */
+@media (max-width: 1024px) {
+
+
+    .shelf-container {
+        padding: 60px 40px 40px 40px;
+    }
+
+    .shelf-container h2 {
+        font-size: 24px;
+    }
+}
+
+
+/* Telas menores que 768px (CELULAR) */
+@media (max-width: 768px) {
+
+
+    .estante-wrapper {
+        height: 200px;
+    }
+
+    .area-carrossel-livros {
+        width: 50%;
+        top: -45%;
+    }
+
+    .book-cover {
+        width: 95%;
+    }
+
+    .shelf-container {
+        margin-top: 40%;
+
+    }
+
+    .shelf-container h2 {
+        font-size: 22px;
+    }
+
+    .edit-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
