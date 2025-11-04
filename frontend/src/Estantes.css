@@ -1,146 +1,152 @@
-/* Estantes */
 
-section#sec-estante {
-    margin-top: 10% !important;
-    background: transparent;
-    width: 100%;
+.estante-container {
+    background-color: #f5f0e3;
+    padding: 1%;
+    border-radius: 2%;
+    margin-bottom: 5%;
+    height: 50%;
 }
 
-section#sec-estante2 {
-    margin-top: 20% !important;
-    background: transparent;
-    width: 100%;
+.livro-item {
+    flex: 0 0 200px; 
+    padding-right: 2% !important;
+    margin-right: 5%;
 }
 
-/*  geral da estante */
-.area-estante {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: visible;
-}
-
-/* Parte Azul */
-
-.estante-wrapper {
-    width: 100%;
-    background-color: #0f2438;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    border-radius: 12px 12px 0 0;
-    height: 200px;
-}
-
-.area-carrossel-livros {
-    width: 85%;
-    position: absolute;
-    top: -65%;
-    transform: translateY(0);
-}
-
-.swiper {
-    width: 100%;
-}
-
-/* Setas */
-.swiper-button-prev,
-.swiper-button-next {
-    color: white;
-}
-
-/* Capa */
-.book-cover {
-    width: 80%;
-    border-radius: 22px;
-    object-fit: cover;
-    transition: transform 0.25s ease-in-out;
-}
-
-.book-cover:hover {
-    transform: scale(1.05);
-}
-
-/* Parte Bege */
-
-.shelf-container {
-    margin-top: 13%;
-    width: 100%;
-    background-color: #f3eadc;
-    padding: 70px 60px 40px 60px;
-    border-radius: 0 0 12px 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.shelf-container h2 {
-    font-size: 28px;
+.estante-titulo {
+    margin-top: 13% !important;
+    color: #000;
     font-weight: bold;
-    margin: 0;
+    padding-top: 2rem;
 }
 
-/* Botão */
-.edit-btn {
+.saga-header {
+    margin: 1rem 0;
+}
+
+.btn-editar-estante {
     background-color: #f3eadc;
-    padding: 10px 24px;
-    border: 2px solid #0f2438;
+    padding: 5px 12px;
+    border: 2px solid  #001A38;
     border-radius: 20px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    color: #001A38;
 }
 
-.edit-btn:hover {
-    background-color: #0f2438;
-    color: white;
+.btn-editar-estante:hover {
+    background-color: #001A38;
+    color:  #f3eadc;
+    border: 2px solid #001A38;
 }
 
-/* Responsividade*/
-
-/* Telas entre 768px e 1024px (TABLET) */
-@media (max-width: 1024px) {
-
-
-    .shelf-container {
-        padding: 60px 40px 40px 40px;
-    }
-
-    .shelf-container h2 {
-        font-size: 24px;
-    }
+.slider-container {
+    background-color: transparent;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
+.livro-card{
+  width: 130% !important;
+}
 
-/* Telas menores que 768px (CELULAR) */
-@media (max-width: 768px) {
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
-    .estante-wrapper {
-        height: 200px;
-    }
+/*Colapse*/
 
-    .area-carrossel-livros {
-        width: 50%;
-        top: -45%;
-    }
+.card-img, .card-img-bottom, .card-img-top {
+    width: 100% !important;}
 
-    .book-cover {
-        width: 95%;
-    }
+/*accordion */
+.card-obras {
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
 
-    .shelf-container {
-        margin-top: 40%;
+/* Estado fechado */
+.card-obras.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 1rem; /* mantém um pouco de padding lateral */
+}
 
-    }
+/* Estado aberto */
+.card-obras.expanded {
+  max-height: 2000px; /* valor alto para garantir que cabe todo conteúdo */
+  opacity: 1;
+  padding: 2rem 1rem;
+}
 
-    .shelf-container h2 {
-        font-size: 22px;
-    }
+.saga-header {
+  transition: background-color 0.3s ease;
+}
 
-    .edit-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
+.saga-header:hover {
+  background-color: #e6dcc9;
+}
+
+.btn-editar-estante {
+  transition: transform 0.3s ease;
+}
+
+.btn-editar-estante:active {
+  transform: scale(0.95);
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.0); /* Inicialmente invisível */
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity .4s ease, transform .3s ease;
+}
+
+.carousel-wrapper:hover .carousel-nav-btn {
+  opacity: 0.9;
+}
+
+.carousel-nav-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.carousel-nav-btn.left {
+  left: 10px;
+}
+
+.carousel-nav-btn.right {
+  right: 10px;
+}
+
+.slider-container {
+  scroll-behavior: smooth;
+  transition: scroll 0.4s ease-in-out;
+}
+
+.livro-item {
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.livro-item:hover {
+  transform: scale(1.07);
+  filter: brightness(1.08);
 }
