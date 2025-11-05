@@ -2,6 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Link } from "react-router-dom";
+
 
 export default function Home() {
   return (
@@ -32,9 +34,9 @@ export default function Home() {
               Aqui você pode dar sua opinião sobre os filmes, séries e livros
               que marcaram você ou encontrar novas histórias para se apaixonar.
             </h5>
-            <a className="diventrar textobranco botaoentrar" href="#">
+            <Link className="diventrar textobranco botaoentrar" to="/login">
               Entrar
-            </a>
+            </Link>
           </div>
           <div className="col-md-6">
             <img

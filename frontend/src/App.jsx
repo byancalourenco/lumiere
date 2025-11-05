@@ -1,9 +1,19 @@
 // importa a biblioteca do react, faz funcionar os componentes e blablabla
-import React from "react"; 
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Home.jsx";
-import "./Home.css";
+import Login from "./Login.jsx";
 
-export default function App() {
-  return <Home />;
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;

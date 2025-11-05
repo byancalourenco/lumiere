@@ -1,0 +1,136 @@
+.container-fluid{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+.textobranco{color: #EDE7DB;}
+.textoazul{color: #001A38;}
+
+/* Entrar */
+
+.entrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding: 150px;
+}
+
+.imgpessoa{
+    width: 20px;
+    margin: 5px;
+}
+
+.imgsenha{
+    width: 35px;
+    margin: 5px;
+}
+
+.divemail{
+    float: left;
+    padding-top: 60px;
+}
+
+.divsenha{
+    float: left;
+    padding-top: 40px;
+}
+
+.input{
+    border: 1px solid #001A38;
+    color: #001A38;
+    padding: 10px;
+}
+
+.inputremember{padding-top: 60px;}
+
+.lembrarsenha{
+    float: left;
+    padding-top: 10px;
+    margin: 2px;
+}
+
+.form-check-input:checked {
+    background-color: #001A38;
+    border-color: #001A38;
+}
+
+.esqueceusenha{
+    padding-top: 100px; 
+    padding-bottom: 40px;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+}
+
+.btnentrar{
+    background-color: #001A38;
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.btnentrar:hover{
+    border: 1px solid #001A38;
+    transition: 0.5s;
+}
+
+.criarconta{
+    background-color: #001A38;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh; 
+    padding: 150px;
+}
+
+.btncriarconta{
+    border: 1px solid #EDE7DB;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btncriarconta:hover{
+    background-color: #EDE7DB;
+    transition: 0.5s;
+}
+
+.textoleft{
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+.imglogologin{
+    width: 40%;
+    transform: rotate(-20deg);
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+}
+
+@media (max-width: 1150px){
+    .entrar, .criarconta {
+        padding: 100px;
+    }
+}
+
+@media (max-width: 900px){
+    .entrar, .criarconta{
+        padding: 50px;
+    }
+}
+
+@media (max-width: 768px){
+    .criarconta{
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+}

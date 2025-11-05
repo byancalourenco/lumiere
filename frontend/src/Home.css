@@ -42,6 +42,12 @@
     padding: 15px;
 }
 
+.botaoentrar:hover{
+    background-color: #EDE7DB;
+    color: #001A38;
+    transition: 0.5s;
+}
+
 .divlogo{
     padding-top: 10px;
 }
