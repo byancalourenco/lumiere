@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Home.jsx";
 import Login from "./Login.jsx";
+import Criarconta from "./criarconta.jsx";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/criarconta" element={<Criarconta />} />
       </Routes>
     </BrowserRouter>
   );
