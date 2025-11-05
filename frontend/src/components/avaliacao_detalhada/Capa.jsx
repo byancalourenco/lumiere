@@ -1,20 +1,40 @@
 import React, { useState } from "react";
+import Rating from '@mui/material/Rating'; // importar as estrelinhas
+import Box from '@mui/material/Box'; //ajuda a estilizar as estrelinhas 
 
 //img
 import capaPrincipe from "../../assets/img/capa-pequeno-principe.jpg";
 
 function Capa() {
-  const capaa = capaPrincipe;
-  const [resposta, setResposta] = useState(""); //pro banco depois
+  const capaa = capaPrincipe; // imagem
+  const [resposta, setResposta] = useState(""); //pro banco depois - forms
   const formsSubmit = (e) => { //função pra quando o form é enviado
-    e.preventDefault(); }; //nao atualiza a pag
+    e.preventDefault(); }; //nao atualiza a pag depois que a pessoa envia a escolha dela
+  
+  const estrela = { // serve pra quando a pessoa colocar a quantidade de estrela aparecer a mensagem do lado
+    0.5: 'Desastre total!',
+    1: 'Péssimo!',
+    1.5: '“Dava pra piorar…',
+    2: 'Tentei gostar… tentei.',
+    2.5: 'Definitivamente foi alguma coisa.',
+    3: 'Na média.',
+    3.5: 'É bom, mais nem tanto.',
+    4: 'Valeu a pipoca!',
+    4.5: 'Quase perfeito...',
+    5: 'Obra-prima!',
+  };  
 
+  const [value, setValue] = useState(null); //variável “value” guarda o valor da avaliação (quantidade de estrelas)
+                                              //o número entre parenteses é pra quando a pessoa entrar na avaliação ter uma quant de estrelas marcadas
+  const [hover, setHover] = useState(-1);  //variável “hover” guarda o valor quando o mouse passa por cima
+                                                 // o -1 é pra basicamente dizer que não tem mouse passando por cima da estrela 
     
     
   return ( 
     <div className="container my-5">
       <div className="row align-items-center justify-content-center">
-        {/* aapa */}
+       
+        {/* Capa */}
         <div className="col-md-4 text-center mb-4 mb-md-0">
           <img
             src={capaPrincipe}
@@ -23,9 +43,36 @@ function Capa() {
           />
         </div>
 
-        {/* Formulário De valer a pena*/}
+{/*------------------------------------------------------------------------------------------------- */}
+
+        
         <div className="col-md-6">
           <h3 className="fw-bold mb-3 titulo_av">O Pequeno Príncipe</h3>
+
+        {/*Estrelas*/}
+
+        <div className="estrelas">
+
+          <Rating
+            name="estrela-feedback"       // nome de identificação
+            value={value}                // quantas estrelas estão selecionadas
+            precision={0.5}              // permite meias estrelinhas (ex: 3.5)
+            onChange={(event, newValue) => {
+              setValue(newValue);        // atualiza o valor quando clica numa estrela
+            }}
+            onChangeActive={(event, newHover) => {
+              setHover(newHover);        // atualiza o valor quando passa o mouse por cima
+            }}
+          />
+
+            {/* texto do lado das estrelas */}
+          <Box className="texto_estrela">
+            {estrela[hover !== -1 ? hover : value] || ""}
+        </Box>
+  
+    </div>
+
+{/* Formulário De valer a pena*/}
           <form onSubmit={formsSubmit}> 
             <p className="fw-semibold mb-3">Valeu a pena ler esse livro?</p>
 
@@ -72,9 +119,9 @@ function Capa() {
               </label>
             </div>
 
-            <a type="submit" className="btn btn-primary botao_valeu_a_pena">
+            <button type="submit" className="btn btn-primary botao_valeu_a_pena">
               Confirmar
-            </a>
+            </button>
           </form>
         </div>
       </div>

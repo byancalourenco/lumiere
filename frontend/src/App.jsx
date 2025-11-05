@@ -1,4 +1,3 @@
-
 // importa a biblioteca do react, faz funcionar os componentes e blablabla
 import React from "react"; 
 

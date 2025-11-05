@@ -77,12 +77,17 @@
     margin: 0 auto;
     /* margin-top: 15% !important; */
 }
-.container.text-center .row  .col-6 {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    margin-top: 5% !important;
+
+.container.text-center .row .col-6 {
+  display: flex;
+  flex-direction: column;   /* Deixa o conteúdo em coluna */
+  align-items: center;      /* Centraliza horizontalmente o conteúdo */
+  justify-content: center;  /* Centraliza verticalmente (se quiser no meio) */
+  text-align: center;       /* Centraliza o texto */
+  margin-top: 5% !important;
+  flex: 0 0 45%;            /* Tamanho fixo das colunas, ajusta conforme quiser */
 }
+
 
 .titulo_av{
     color: #152d47 !important;
@@ -106,8 +111,24 @@
     margin-top: 2% !important;    
     border: none !important;
     align-items: center;
+    display: block;
+    margin: 15px auto;
  }
 
  .form_valer_a_pena{
     align-items: center !important;
  }
+
+ /*Estrelas*/
+.estrelas {
+  width: 500px;             
+  display: flex;            
+  align-items: center;     
+
+}
+
+.texto_estrela {
+  margin-left: 10px;   
+  color: #0D2240;  
+  font-size: 15px;
+}
