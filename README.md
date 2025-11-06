@@ -22,7 +22,7 @@ Framework de build - 	Vite
 Estilização	Bootstrap -	Layout responsivo e componentes prontos
 Comunicação com Fetch API -	Requisições para o backend em PHP
 
-# Integração com Backend (Front ↔ Backend)
+# Integração com Backend 
 
 A comunicação entre o Front-End e o Back-End será feita por API.
 
