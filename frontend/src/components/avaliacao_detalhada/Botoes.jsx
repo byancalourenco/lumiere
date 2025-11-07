@@ -9,7 +9,7 @@ function Botoes() {
         <a href="#" className={`naveg ${ativo === 1 ? "active" : ""}`} onClick={() => setAtivo(1)}>1</a>
         <a href="#" className={`naveg ${ativo === 2 ? "active" : ""}`} onClick={() => setAtivo(2)}>2</a>
         <a href="#" className={`naveg ${ativo === 3 ? "active" : ""}`} onClick={() => setAtivo(3)}>3</a>
-        <a href="#" className={`naveg ${ativo === 4 ? "active" : ""}`} onClick={() => setAtivo(4)}>4</a>
+        {/* <a href="#" className={`naveg ${ativo === 4 ? "active" : ""}`} onClick={() => setAtivo(4)}>4</a> */}
     </div>
   );
 }

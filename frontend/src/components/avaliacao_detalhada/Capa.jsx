@@ -47,30 +47,25 @@ function Capa() {
 
         
         <div className="col-md-6">
-          <h3 className="fw-bold mb-3 titulo_av">O Pequeno Príncipe</h3>
+        <h3 className="fw-bold mb-3 titulo_av">O Pequeno Príncipe</h3>
 
         {/*Estrelas*/}
 
         <div className="estrelas">
-
           <Rating
-            name="estrela-feedback"       // nome de identificação
-            value={value}                // quantas estrelas estão selecionadas
-            precision={0.5}              // permite meias estrelinhas (ex: 3.5)
-            onChange={(event, newValue) => {
-              setValue(newValue);        // atualiza o valor quando clica numa estrela
-            }}
-            onChangeActive={(event, newHover) => {
-              setHover(newHover);        // atualiza o valor quando passa o mouse por cima
-            }}
+            name="estrela-feedback"
+            value={value}
+            precision={0.5}
+            onChange={(event, newValue) => setValue(newValue)}
+            onChangeActive={(event, newHover) => setHover(newHover)}
           />
+        </div>
 
-            {/* texto do lado das estrelas */}
-          <Box className="texto_estrela">
-            {estrela[hover !== -1 ? hover : value] || ""}
+        <Box className="texto_estrela">
+          {estrela[hover !== -1 ? hover : value] || ""}
         </Box>
-  
-    </div>
+
+
 
 {/* Formulário De valer a pena*/}
           <form onSubmit={formsSubmit}> 
@@ -119,9 +114,7 @@ function Capa() {
               </label>
             </div>
 
-            <button type="submit" className="btn btn-primary botao_valeu_a_pena">
-              Confirmar
-            </button>
+            
           </form>
         </div>
       </div>

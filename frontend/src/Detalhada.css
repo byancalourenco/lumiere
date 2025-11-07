@@ -50,6 +50,11 @@
       text-decoration: none;
 }
 
+.naveg:hover{
+   transform: scale(1.2) !important;
+   transform: scale(1.1);
+}
+
 
 .naveg.active {
       background-color: #0d1b2a;
@@ -70,22 +75,37 @@
     height: auto;
     width: 100%; 
     box-shadow: 
-        0 3px 6px #0d1b2a4b, 
-        0 4px 12px #0d1b2a2f !important; 
-    border-radius: 7px;
+        0 7px 10px #186bc44b, 
+        0 6px 14px #0669d32f !important; 
+    border-radius: 10px !important;
     display: block; 
     margin: 0 auto;
+    margin-left: 130px !important;
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* margin-top: 15% !important; */
+}
+
+.capa_detalhada:hover{
+   transform: scale(1.2) !important;
+   transform: scale(1.1);
 }
 
 .container.text-center .row .col-6 {
   display: flex;
-  flex-direction: column;   /* Deixa o conteúdo em coluna */
-  align-items: center;      /* Centraliza horizontalmente o conteúdo */
-  justify-content: center;  /* Centraliza verticalmente (se quiser no meio) */
-  text-align: center;       /* Centraliza o texto */
+  flex-direction: column;   
+  align-items: center;      
+  justify-content: center;  
+  text-align: center;       
   margin-top: 5% !important;
-  flex: 0 0 45%;            /* Tamanho fixo das colunas, ajusta conforme quiser */
+  flex: 0 0 45%;           
+}
+
+.col-md-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+    
 }
 
 
@@ -93,6 +113,7 @@
     color: #152d47 !important;
     margin-bottom: 2% !important;
     padding: 15px !important;
+    text-align: center !important;
 }
 
  .botao_valeu_a_pena{
@@ -108,12 +129,19 @@
     padding: 8px 16px;  
     border-radius: 15px;     
     cursor: pointer;
-    margin-top: 2% !important;    
+    margin-top: 5% !important;    
     border: none !important;
     align-items: center;
     display: block;
     margin: 15px auto;
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
+
+ .botao_valeu_a_pena:hover{
+   transform: scale(1.2) !important;
+   transform: scale(1.1);
+}
 
  .form_valer_a_pena{
     align-items: center !important;
@@ -121,14 +149,152 @@
 
  /*Estrelas*/
 .estrelas {
-  width: 500px;             
-  display: flex;            
-  align-items: center;     
-
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+  transform: none !important; /* anula qualquer transformação herdada */
 }
 
-.texto_estrela {
-  margin-left: 10px;   
+.estrelas * {
+  transform: none !important;
+}
+
+.texto_estrela{
+  margin-top: -20px !important;   
+  margin-bottom: 10px !important;
   color: #0D2240;  
   font-size: 15px;
 }
+
+.comentario{
+  text-align: center ;
+  align-items: center;
+  max-width: 100%;
+  padding: 100px;
+}
+
+.caixa_comentario{
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  margin-top: 0px !important;
+  box-shadow: 
+        0 5px 8px #1743724b, 
+        0 6px 14px #0669d32f !important; 
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caixa_comentario:hover{
+   transform: scale(1.2) !important;
+   transform: scale(1.1) !important;
+}
+
+.section_comentario{
+  margin-top: -120px !important;
+}
+
+
+
+/* até 600px */
+@media (max-width: 600px) {
+
+  .subtitulo {
+    font-size: 16px !important;
+    margin-top: 0 !important;
+  }
+
+  .navegacao {
+    gap: 1rem;
+    margin-bottom: 10% !important;
+  }
+
+  .naveg {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .capa_detalhada {
+    max-width: 200px !important;
+    margin: 0 auto !important; 
+    display: block;
+  }
+
+  .titulo_av {
+    font-size: 18px !important;
+    padding: 5px !important;
+  }
+
+  .texto_estrela {
+    font-size: 13px;
+    margin-top: -10px !important;
+  }
+
+  .botao_valeu_a_pena {
+    max-width: 130px;
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .comentario {
+    padding: 20px !important;
+  }
+
+  .caixa_comentario {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .section_comentario {
+    margin-top: -60px !important;
+  }
+
+  .container.text-center .row .col-6 {
+    flex: 0 0 100%;
+    margin-top: 10% !important;
+  }
+}
+
+/* até 800px */
+@media (max-width: 800px) {
+
+  .capa_detalhada {
+    max-width: 180px !important;
+    margin: 0 auto !important; 
+    display: block;
+  }
+
+  .navegacao {
+    gap: 1.5rem;
+  }
+
+  .titulo_av {
+    font-size: 20px !important;
+  }
+
+  .texto_estrela {
+    font-size: 14px;
+  }
+
+  .comentario {
+    padding: 40px !important;
+  }
+}
+
+/* 🖥️ Telas grandes (acima de 1200px) */
+@media (min-width: 1200px) {
+  .capa_detalhada {
+    max-width: 300px !important;
+  }
+
+  .titulo_av {
+    font-size: 22px !important;
+  }
+
+  .botao_valeu_a_pena {
+    max-width: 180px;
+    font-size: 18px;
+  }
+}
+
