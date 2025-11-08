@@ -194,7 +194,72 @@
   margin-top: -120px !important;
 }
 
+/* _____________________________________________________________________________________ */
 
+/* tabela */
+.tabela_criterio {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #f4f7fb !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  border-radius: 12px;
+  border-collapse: separate;
+  border-spacing: 0; 
+  overflow: hidden; 
+}
+
+.tabela_criterio th,
+.tabela_criterio td {
+  text-align: left;
+  padding: 12px 20px;
+  color: #0D2240;
+  border: none;
+}
+
+.tabela_criterio th:first-child { /*formata a primeira coluna*/
+  width: 30%;
+  font-weight: 600;
+}
+
+/* título acima da tabela */
+.titulo_av_criterios {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0D2240;
+  text-align: center;
+  margin-bottom: 18px;
+    margin-top: 60px;
+}
+
+.titulo_criterio {
+  font-size: 13px;
+  color: #4A5568;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* textarea bonitinha e leve */
+.caixa_criterio {
+  width: 100%;
+  height: 60px; 
+  border: 1px solid #d1d9e6;
+  border-radius: 10px;
+  resize: none;
+  padding: 8px 10px;
+  font-size: 14px;
+  background-color: #f4f7fb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+.caixa_criterio:focus {
+  box-shadow: 0 0 8px #0D2240;
+  outline: none;
+}
+
+/* _______________________________________________________________________________________ */
 
 /* até 600px */
 @media (max-width: 600px) {
@@ -254,7 +319,29 @@
     flex: 0 0 100%;
     margin-top: 10% !important;
   }
+
+   .tabela_criterio {
+    max-width: 95%;
+    font-size: 14px;
+  }
+
+  .tabela_criterio th:first-child {
+    width: 40%;
+  }
+
+  .caixa_criterio {
+    height: 50px;
+    font-size: 13px;
+  }
+
+  .titulo_av_criterios {
+    font-size: 16px;
+    margin-top: 40px;
+  }  
+
 }
+
+
 
 /* até 800px */
 @media (max-width: 800px) {
@@ -280,6 +367,15 @@
   .comentario {
     padding: 40px !important;
   }
+
+  .tabela_criterio {
+    max-width: 90%;
+  }
+
+  .tabela_criterio th:first-child {
+    width: 35%;
+  }
+
 }
 
 /* 🖥️ Telas grandes (acima de 1200px) */
@@ -296,5 +392,15 @@
     max-width: 180px;
     font-size: 18px;
   }
+
+   .tabela_criterio {
+    max-width: 1100px;
+    font-size: 16px;
+  }
+
+  .caixa_criterio {
+    height: 65px;
+  }
+
 }
 
