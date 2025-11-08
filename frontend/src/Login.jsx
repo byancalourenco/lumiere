@@ -46,6 +46,7 @@ function Login() {
                     <Link className="btnbranco textobranco btn" to="/criarconta">
                         Criar conta
                     </Link>
+                    <Link to="/inicial">Ir para a página inicial</Link>
 
                     <img className="imglogologin" src="/img/logo.png" alt="" />
                 </div>
