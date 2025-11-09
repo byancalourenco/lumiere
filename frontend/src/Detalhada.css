@@ -10,18 +10,15 @@
 
 /*BOTOES____________________________________________________*/
 
-/* container*/
 .navegacao {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     position: relative;
-    position: relative;
     margin-bottom: 5% !important;
 }
 
-/* linha entre os círculos */
 .navegacao::before {
       content: "";
       position: absolute;
@@ -51,10 +48,8 @@
 }
 
 .naveg:hover{
-   transform: scale(1.2) !important;
    transform: scale(1.1);
 }
-
 
 .naveg.active {
       background-color: #0d1b2a;
@@ -62,14 +57,8 @@
       border-color: #0d1b2a;
 }
 
-    /* etapa ativa (preenchida) */
-.naveg.active {
-      background-color: #0d1b2a; 
-      color: #fff;
-      border-color: #0d1b2a;
-}
-
 /*GRID CAPA E AVALIACAO RAPIDA____________________________________________________*/
+
 .capa_detalhada{
     max-width: 250px !important; 
     height: auto;
@@ -83,12 +72,10 @@
     margin-left: 130px !important;
     overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* margin-top: 15% !important; */
 }
 
 .capa_detalhada:hover{
-   transform: scale(1.2) !important;
-   transform: scale(1.1);
+   transform: scale(0.9) !important;
 }
 
 .container.text-center .row .col-6 {
@@ -105,9 +92,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;   
-    
 }
-
 
 .titulo_av{
     color: #152d47 !important;
@@ -116,14 +101,13 @@
     text-align: center !important;
 }
 
- .botao_valeu_a_pena{
+.botao_valeu_a_pena{
     width: 100%;  
     max-width: 150px;  
     font-size: 16px;       
     font-weight: 600;
     display: inline-block; 
     text-align: center;    
-    text-decoration: none;    
     background-color: #0D2240 !important; 
     color: #fff;                         
     padding: 8px 16px;  
@@ -136,24 +120,24 @@
     margin: 15px auto;
     overflow: hidden; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
- }
+}
 
- .botao_valeu_a_pena:hover{
-   transform: scale(1.2) !important;
+.botao_valeu_a_pena:hover{
    transform: scale(1.1);
 }
 
- .form_valer_a_pena{
+.form_valer_a_pena{
     align-items: center !important;
- }
+}
 
- /*Estrelas*/
+/*Estrelas*/
+
 .estrelas {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-bottom: 8px;
-  transform: none !important; /* anula qualquer transformação herdada */
+  transform: none !important;
 }
 
 .estrelas * {
@@ -186,7 +170,6 @@
 }
 
 .caixa_comentario:hover{
-   transform: scale(1.2) !important;
    transform: scale(1.1) !important;
 }
 
@@ -197,6 +180,7 @@
 /* _____________________________________________________________________________________ */
 
 /* tabela */
+
 .tabela_criterio {
   width: 100%;
   max-width: 1000px;
@@ -218,19 +202,18 @@
   border: none;
 }
 
-.tabela_criterio th:first-child { /*formata a primeira coluna*/
+.tabela_criterio th:first-child {
   width: 30%;
   font-weight: 600;
 }
 
-/* título acima da tabela */
 .titulo_av_criterios {
   font-size: 18px;
   font-weight: 600;
   color: #0D2240;
   text-align: center;
   margin-bottom: 18px;
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .titulo_criterio {
@@ -240,7 +223,6 @@
   display: block;
 }
 
-/* textarea bonitinha e leve */
 .caixa_criterio {
   width: 100%;
   height: 60px; 
@@ -251,7 +233,12 @@
   font-size: 14px;
   background-color: #f4f7fb;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: all 0.2s ease;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caixa_criterio:hover{
+  transform: scale(0.9) !important;
 }
 
 .caixa_criterio:focus {
@@ -261,9 +248,126 @@
 
 /* _______________________________________________________________________________________ */
 
-/* até 600px */
-@media (max-width: 600px) {
+/* forms emoção */
 
+.trequinho_emocao{
+    overflow: hidden; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trequinho_emocao:hover{
+   transform: scale(1.1) !important;
+}
+
+.form-check-input:checked{
+  background-color: #0D2240;
+}
+
+.texto_emocao{
+  overflow: hidden; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+   white-space: nowrap;
+}
+
+.texto_emocao:hover{
+   transform: scale(0.9) !important;
+}
+
+/* __________________________________temporadas____________________________________________ */
+
+.capa_detalhada_temp {
+  min-width: 180px;
+  max-width: 300px !important;
+  padding: 10px;
+  height: auto;
+  width: 100%;
+  box-shadow:
+    0 7px 10px #186bc44b,
+    0 6px 14px #0669d32f !important;
+  border-radius: 10px !important;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.temporadas-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 25px;
+}  
+
+.capa_detalhada_temp:hover {
+  transform: scale(0.9) !important;
+}
+
+.av_temp {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 3%;
+  align-items: center;
+  width: 80%;
+}
+
+.av_temp .container_cor {
+  flex: 0 0 250px;
+}
+
+.texto_ava {
+  font-size: 20px;
+  margin-bottom: 2%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.texto_temp {
+  text-align: left !important;
+}
+
+.container_cor {
+  background-color: #0d2240;
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 0 0 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.container_cor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 bolinha e texto juntinhos */
+.form-check {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 6px;
+  margin-left: 8px; 
+}
+
+.form-check-input {
+  margin-right: 6px !important;
+  margin-left: 0 !important;
+  transform: scale(1.1);
+}
+
+.form-check-label {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* ________________________________media_____________________________________________________ */
+
+@media (max-width: 600px) {
   .subtitulo {
     font-size: 16px !important;
     margin-top: 0 !important;
@@ -280,9 +384,10 @@
     font-size: 14px;
   }
 
-  .capa_detalhada {
+  .capa_detalhada,
+  .capa_detalhada_temp {
     max-width: 200px !important;
-    margin: 0 auto !important; 
+    margin: 0 auto !important;
     display: block;
   }
 
@@ -320,7 +425,7 @@
     margin-top: 10% !important;
   }
 
-   .tabela_criterio {
+  .tabela_criterio {
     max-width: 95%;
     font-size: 14px;
   }
@@ -338,49 +443,62 @@
     font-size: 16px;
     margin-top: 40px;
   }  
-
-}
-
-
-
-/* até 800px */
-@media (max-width: 800px) {
-
-  .capa_detalhada {
-    max-width: 180px !important;
-    margin: 0 auto !important; 
-    display: block;
+  
+  .av_temp .row {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .navegacao {
-    gap: 1.5rem;
+  .av_temp .col {
+    width: 100%;
+    margin-bottom: 15px;
   }
 
-  .titulo_av {
-    font-size: 20px !important;
+  .container_cor {
+    width: 90%;
+    margin: 0 auto 15px auto;
+    text-align: center;
   }
 
-  .texto_estrela {
+  .form-check {
+    justify-content: center;
+    gap: 4px;
+    margin-left: 0;
+  }
+
+  .form-check-label {
     font-size: 14px;
   }
+}
 
-  .comentario {
-    padding: 40px !important;
+/* 💻 tablets */
+@media (max-width: 992px) and (min-width: 601px) {
+  .av_temp .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .tabela_criterio {
-    max-width: 90%;
+  .av_temp .col {
+    width: 48%;
+    margin-bottom: 20px;
   }
 
-  .tabela_criterio th:first-child {
-    width: 35%;
+  .container_cor {
+    width: 85%;
+    margin: 0 auto;
   }
 
+  .form-check {
+    justify-content: center;
+  }
 }
 
 /* 🖥️ Telas grandes (acima de 1200px) */
+
 @media (min-width: 1200px) {
-  .capa_detalhada {
+  .capa_detalhada,
+  .capa_detalhada_temp {
     max-width: 300px !important;
   }
 
@@ -393,7 +511,7 @@
     font-size: 18px;
   }
 
-   .tabela_criterio {
+  .tabela_criterio {
     max-width: 1100px;
     font-size: 16px;
   }
@@ -402,5 +520,15 @@
     height: 65px;
   }
 
-}
+  .av_temp {
+    width: 70%;
+  }
 
+  .texto_ava {
+    font-size: 22px;
+  }
+
+  .form-check-label {
+    font-size: 16px;
+  }
+}

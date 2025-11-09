@@ -4,13 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Header from "./components/Header.jsx";
 import Botoes from "./components/avaliacao_detalhada/Botoes.jsx";
-import CapaForms from "./components/avaliacao_detalhada/CapaForms.jsx";
-
+import CapaTemporadas from "./components/avaliacao_detalhada/CapaTemporadas.jsx"
 
 import "./App.css";
 import "./Detalhada.css";
 
-function CriterioEmocao(){
+function Temporadas(){
+
     return(
         <main>
             <Header />
@@ -20,10 +20,12 @@ function CriterioEmocao(){
                 <Botoes />
             </section>
             <section>
-                <CapaForms />
+                <CapaTemporadas />
             </section>
-        </main>    
+        </main>  
     );
+
+
 }
 
-export default CriterioEmocao;
+export default Temporadas;

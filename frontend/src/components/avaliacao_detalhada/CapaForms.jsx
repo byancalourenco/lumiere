@@ -24,36 +24,36 @@ function CapaForms() {
             <p className="fw-semibold mb-3">O que sente sobre esse título?</p>
 
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
-                <label className="form-check-label" htmlFor="radioDefault1">
+                <input className="form-check-input trequinho_emocao" type="radio" name="radioDefault" id="radioDefault1" />
+                <label className="form-check-label texto_emocao" htmlFor="radioDefault1">
                 Virou minha nova obsessão! 
                 </label>
             </div>
 
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault2" />
-                <label className="form-check-label" htmlFor="radioDefault2">
+                <input className="form-check-input trequinho_emocao" type="radio" name="radioDefault" id="radioDefault2" />
+                <label className="form-check-label texto_emocao" htmlFor="radioDefault2">
                 Me destruiu e eu agradeço! 
                 </label>
             </div>
 
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault3" />
-                <label className="form-check-label" htmlFor="radioDefault3">
+                <input className="form-check-input trequinho_emocao" type="radio" name="radioDefault" id="radioDefault3" />
+                <label className="form-check-label texto_emocao" htmlFor="radioDefault3">
                 Gostei, mas quase dormi. 
                 </label>
             </div>
 
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault4" />
-                <label className="form-check-label" htmlFor="radioDefault4">
+                <input className="form-check-input trequinho_emocao" type="radio" name="radioDefault" id="radioDefault4" />
+                <label className="form-check-label texto_emocao" htmlFor="radioDefault4">
                 Perdi horas e ainda ri depois. 
                 </label>
             </div>      
 
             <div className="form-check">
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault5" />
-                <label className="form-check-label" htmlFor="radioDefault5">
+                <input className="form-check-input trequinho_emocao" type="radio" name="radioDefault" id="radioDefault5" />
+                <label className="form-check-label texto_emocao" htmlFor="radioDefault5">
                 Um espetáculo de decepção!
                 </label>
            </div>    
@@ -69,7 +69,7 @@ function CapaForms() {
         <div>
             <p className="fw-semibold mb-3 titulo_av_criterios">Avalie essa obra por critérios?</p>
 
-            <table class="table tabela_criterio">
+            <table className="table tabela_criterio">
                 <thead>
                     <tr>
                     <th scope="col">Critério</th>
@@ -81,41 +81,36 @@ function CapaForms() {
                     <tr>
                         <th scope="row">Enredo:</th>
                             <td>
-                                <label for="exampleFormControlTextarea1" class="form-label titulo_criterio"></label>
-                                <textarea class="form-control caixa_criterio" id="exampleFormControlTextarea1" rows="3" placeholder="Digite aqui sua nota..."></textarea>
-                            </td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
 
                     <tr>
                         <th scope="row">Personagens:</th>
                             <td>
-                                <label for="exampleFormControlTextarea1" class="form-label titulo_criterio"></label>
-                                <textarea class="form-control caixa_criterio" id="exampleFormControlTextarea1" rows="3" placeholder="Digite aqui sua nota..."></textarea>
-                            </td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
 
                     <tr>
                         <th scope="row">Fluidez da leitura:</th>
                             <td>
-                                <label for="exampleFormControlTextarea1" class="form-label titulo_criterio"></label>
-                                <textarea class="form-control caixa_criterio" id="exampleFormControlTextarea1" rows="3" placeholder="Digite aqui sua nota..."></textarea>
-                            </td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
 
                     <tr>
                         <th scope="row">Ambientação:</th>
                             <td>
-                                <label for="exampleFormControlTextarea1" class="form-label titulo_criterio"></label>
-                                <textarea class="form-control caixa_criterio" id="exampleFormControlTextarea1" rows="3" placeholder="Digite aqui sua nota..."></textarea>
-                            </td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
 
                     <tr>
                         <th scope="row">Originalidade:</th>
                             <td>
-                                <label for="exampleFormControlTextarea1" class="form-label titulo_criterio"></label>
-                                <textarea class="form-control caixa_criterio" id="exampleFormControlTextarea1" rows="3" placeholder="Digite aqui sua nota..."></textarea>
-                            </td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
                 </tbody>
             </table>
