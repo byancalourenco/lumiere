@@ -296,3 +296,60 @@ footer{
         margin-top: 60px;
     }
 }
+
+/* carrossel pagina incial*/
+
+.aval-card {
+    background-color: #ECE7DB;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    color: #001A38;
+    height: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 270px;
+}
+
+.slick-slide > div {
+    display: flex !important;
+    height: 100%;
+}
+
+.slick-track {
+    display: flex !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #001A38;
+    font-size: 28px;
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+}
+
+.slick-dots li button:before {
+    color: #012957;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #001A38;
+}
+
+@media (max-width: 576px) {
+  .carousel-section {
+    display: none !important;
+  }
+}
+
+
+
+
+

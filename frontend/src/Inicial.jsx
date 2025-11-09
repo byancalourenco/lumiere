@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer.jsx";
+import CarouselAvaliacoes from "./components/CarouselAvaliacoes.jsx";
 import './App.css';
 import "./Inicial.css";
 import { Link } from "react-router-dom";
@@ -24,6 +25,10 @@ function Inicial(){
                         <img className="imginicial" src="/img/imginicial.png" alt="" />
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <CarouselAvaliacoes />
             </div>
 
             <div>

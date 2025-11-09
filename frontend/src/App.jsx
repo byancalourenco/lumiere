@@ -1,6 +1,9 @@
 // importa a biblioteca do react, faz funcionar os componentes e blablabla
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 import Home from "./Home.jsx";
 import Login from "./Login.jsx";
