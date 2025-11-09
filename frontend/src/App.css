@@ -260,3 +260,39 @@ section#sec-destaques h2 {
         text-align: center;
     }
 }
+
+footer{
+    background-color: #001A38;
+    color: #EDE7DB;
+    width: 100%;
+    padding: 10px;
+}
+
+.pfooter{
+    text-align: left;
+}
+
+.imgfooter{
+    position: relative;
+    bottom: 60px;
+}
+
+.linkfooter{
+    text-decoration: none;
+    color: #EDE7DB;
+    display: flex;
+    line-height: 2em;
+}
+
+@media (max-width: 768px){
+    .col-md-4{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imgfooter{
+        margin-top: 60px;
+    }
+}

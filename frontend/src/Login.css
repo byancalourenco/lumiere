@@ -156,13 +156,13 @@
 
 .btn-outline-custom:hover {
     background-color: #001A38;
-    color: white;
+    color: #EDE7DB;
 }
 
 
 .btn-check:checked + .btn-outline-custom {
     background-color: #001A38;
-    color: white;
+    color: #EDE7DB;
     border-color: #001A38;
 }
 
