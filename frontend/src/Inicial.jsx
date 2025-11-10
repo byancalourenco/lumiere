@@ -87,8 +87,6 @@ function Inicial(){
                         </div>
                     </div>
             </div>
-            <Link to="/rapida">avaliar rapido</Link>
-            <Link to="/detalhada">avaliar detalhado</Link>
             <Footer/>
         </div>
 
