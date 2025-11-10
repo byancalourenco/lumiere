@@ -53,7 +53,7 @@ function Criarconta() {
                             </div>
 
 
-                        <input className="btnentrar textobranco btn" type="submit" value="Entrar" />
+                        <input className="btnentrar textobranco btn" type="submit" value="Criar conta" />
                     </form>
                 </div>
             </div>

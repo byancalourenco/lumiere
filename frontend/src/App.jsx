@@ -9,6 +9,9 @@ import Home from "./Home.jsx";
 import Login from "./Login.jsx";
 import Criarconta from "./Criarconta.jsx";
 import Inicial from "./Inicial.jsx";
+import Rapida from "./Rapida.jsx";
+import Detalhada from "./Detalhada.jsx";
+
 
 function App() {
   return (
@@ -18,6 +21,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/criarconta" element={<Criarconta />} />
         <Route path="/inicial" element={<Inicial />} />
+        <Route path="/rapida" element={<Rapida />} />
+        <Route path="/detalhada" element={<Detalhada />} />
       </Routes>
     </BrowserRouter>
   );

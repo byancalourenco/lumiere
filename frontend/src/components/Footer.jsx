@@ -16,7 +16,7 @@ function Footer(){
                     </div>
 
                     <div className="col-md-4 col-sm-12">
-                        <Link className="linkfooter">Obras</Link>
+                        <a className="linkfooter" href="#divobras">Obras</a>
                         <Link className="linkfooter">Estantes</Link>
                         <Link className="linkfooter">Cadastrar obras</Link>
                         <Link className="linkfooter">Perfil</Link>

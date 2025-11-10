@@ -6,10 +6,22 @@ import CarouselAvaliacoes from "./components/CarouselAvaliacoes.jsx";
 import './App.css';
 import "./Inicial.css";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 
 function Inicial(){
+     const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const elemento = document.querySelector(hash);
+            if (elemento) {
+                elemento.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }, [hash]);
     return(
         <div className="paginicial">
             <Header />
@@ -31,7 +43,7 @@ function Inicial(){
                 <CarouselAvaliacoes />
             </div>
 
-            <div>
+            <div id="divobras">
                 <h1 style={{textAlign: "center"}}>O que vai avaliar hoje?</h1>
 
                     <div className="grid text-center cardinicial">
@@ -75,6 +87,8 @@ function Inicial(){
                         </div>
                     </div>
             </div>
+            <Link to="/rapida">avaliar rapido</Link>
+            <Link to="/detalhada">avaliar detalhado</Link>
             <Footer/>
         </div>
 
