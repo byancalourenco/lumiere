@@ -40,7 +40,7 @@ function Header() {
       <nav className="nav-container">
         <a href="#" className="logo">Lumière</a>
         <ul className="nav-links">
-          <li><a href="#">Obras</a></li>
+          <li><a href="/inicial#divobras">Obras</a></li>
           <li><a href="#">Estantes</a></li>
           <li><a href="#">Cadastrar obras</a></li>
           <li><a href="#">Perfil</a></li>

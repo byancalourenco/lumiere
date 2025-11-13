@@ -83,7 +83,7 @@ function Inicial(){
                                 </div>
                             </div>
                             <p>Dê sua opinião sobre grandes histórias!</p>
-                            <Link className="btnavaliar">Avaliar</Link>
+                            <Link className="btnavaliar" to="/obraslivros">Avaliar</Link>
                         </div>
                     </div>
             </div>

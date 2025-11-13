@@ -10,7 +10,7 @@ import LivroCard from "./components/LivroCard";
 import "./ObrasLivros.css";
 
 // função principal
-function App() {
+function ObrasLivros() {
 
   // estrutura visual | interface 
   return (
@@ -81,4 +81,4 @@ function App() {
   );
 }
 
-export default App;
+export default ObrasLivros;
