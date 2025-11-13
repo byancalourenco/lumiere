@@ -5,6 +5,9 @@ import React, { useState, useEffect } from "react";
 // componente mobilenav
 import MobileNav from "./MobileNav";
 
+// css
+import "./Header.css";
+
 // o componente em si e seu nome 
 function Header() {
 
@@ -29,10 +32,15 @@ function Header() {
     // 
   return (
     <header className={scrolled ? "scrolled" : ""}>
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
+
       <nav className="nav-container">
         <a href="#" className="logo">Lumière</a>
         <ul className="nav-links">
-          <li><a href="/inicial#divobras">Obras</a></li>
+          <li><a href="#">Obras</a></li>
           <li><a href="#">Estantes</a></li>
           <li><a href="#">Cadastrar obras</a></li>
           <li><a href="#">Perfil</a></li>
