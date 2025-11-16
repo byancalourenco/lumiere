@@ -16,10 +16,10 @@ function Footer(){
                     </div>
 
                     <div className="col-md-4 col-sm-12">
-                        <a className="linkfooter" href="/inicial#divobras">Obras</a>
-                        <Link className="linkfooter">Estantes</Link>
+                        <Link className="linkfooter" to="/inicial#obras">Obras</Link>
+                        <Link className="linkfooter" to="/estantes">Estantes</Link>
                         <Link className="linkfooter">Cadastrar obras</Link>
-                        <Link className="linkfooter">Perfil</Link>
+                        <Link className="linkfooter" to="/perfil">Perfil</Link>
                     </div>
                     <div className="col-md-4 col-sm-12">
                         <img className="imgfooter img-fluid" src="./img/camera e livro.png" alt="" />

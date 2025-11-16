@@ -46,6 +46,7 @@
     color: #001A38;
     font-size: 0.9rem;
     transition: all .3s;
+    text-decoration: none;
 }
 
 .livro-btn:hover {

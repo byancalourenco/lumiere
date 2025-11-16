@@ -1,4 +1,5 @@
 import "./LivroCard.css";
+import { Link } from "react-router-dom";
 
 export default function LivroCard({ capa, titulo, estrelas, autor, editora, ano, anoBrasil }) {
   return (
@@ -16,10 +17,10 @@ export default function LivroCard({ capa, titulo, estrelas, autor, editora, ano,
         <p><strong>Editora:</strong> {editora}</p>
         <p><strong>Ano de publicação:</strong> {ano} (original) / {anoBrasil} (Brasil)</p>
 
-        <button className="livro-btn">
+        <Link className="livro-btn" to="/obrasdetalhes">
           Quero avaliar esse livro!
           <span className="material-icons">search</span>
-        </button>
+        </Link>
       </div>
     </div>
   );

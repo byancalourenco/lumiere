@@ -5,6 +5,7 @@ import React from "react";
 import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
 import LivroCard from "./components/LivroCard";
+import Footer from "./components/Footer";
 
 // importa o css
 import "./ObrasLivros.css";
@@ -77,6 +78,8 @@ function ObrasLivros() {
           />
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }

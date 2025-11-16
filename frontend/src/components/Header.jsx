@@ -8,6 +8,8 @@ import MobileNav from "./MobileNav";
 // css
 import "./Header.css";
 
+import { Link } from "react-router-dom";
+
 // o componente em si e seu nome 
 function Header() {
 
@@ -38,12 +40,12 @@ function Header() {
       />
 
       <nav className="nav-container">
-        <a href="#" className="logo">Lumière</a>
+        <Link className="logo" to="/inicial">Lumière</Link>
         <ul className="nav-links">
-          <li><a href="/inicial#divobras">Obras</a></li>
-          <li><a href="#">Estantes</a></li>
-          <li><a href="#">Cadastrar obras</a></li>
-          <li><a href="#">Perfil</a></li>
+          <li><Link to="/inicial#obras">Obras</Link></li>
+          <li><Link to="/estantes">Estantes</Link></li>
+          <li><Link>Cadastrar obras</Link></li>
+          <li><Link to="/perfil">Perfil</Link></li>
         </ul>
 
         {/* A classe active é adicionada se menuActive for true. */}

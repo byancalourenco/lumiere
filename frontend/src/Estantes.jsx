@@ -4,6 +4,7 @@ import Header from "./components/Header.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Estantes.css';
 import './App.css';
+import Footer from './components/Footer.jsx';
 
 import livro1 from "./assets/img/minhavida1.jpg";
 import livro2 from "./assets/img/minhavida2.jpg";
@@ -84,6 +85,7 @@ function Estantes() {
         livrosCarrossel={livrosSaga1}
         obrasDetalhe={obrasSaga1}
       />
+      <Footer />
     </div>
   );
 }

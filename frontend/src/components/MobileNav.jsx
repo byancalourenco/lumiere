@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function MobileNav({ active, toggleMenu }) {
   return (
     <div className={`mobile-nav ${active ? "active" : ""}`}>
-      <a href="#" onClick={toggleMenu}>Obras</a>
-      <a href="#" onClick={toggleMenu}>Estantes</a>
-      <a href="#" onClick={toggleMenu}>Cadastrar obras</a>
-      <a href="#" onClick={toggleMenu}>Perfil</a>
+      <Link to="/inicial#obras" onClick={toggleMenu}>Obras</Link>
+      <Link to="/estantes" onClick={toggleMenu}>Estantes</Link>
+      <Link to="" onClick={toggleMenu}>Cadastrar obras</Link>
+      <Link to="/perfil" onClick={toggleMenu}>Perfil</Link>
     </div>
   );
 }

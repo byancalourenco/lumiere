@@ -10,8 +10,10 @@ import Login from "./Login.jsx";
 import Criarconta from "./Criarconta.jsx";
 import Inicial from "./Inicial.jsx";
 import ObrasLivros from "./ObrasLivros.jsx";
+import Estantes from "./Estantes.jsx";
 import Perfil from "./Perfil.jsx";
 import EditarPerfil from "./EditarPerfil.jsx";
+import ObrasDetalhes from "./ObrasDetalhes.jsx";
 
 
 
@@ -24,8 +26,10 @@ function App() {
         <Route path="/criarconta" element={<Criarconta />} />
         <Route path="/inicial" element={<Inicial />} />
         <Route path="/obraslivros" element={<ObrasLivros />} />
-        {/* <Route path="/perfil" element={<Perfil />} /> */}
-        {/* <Route path="/editarperfil" element={<EditarPerfil />} /> */}
+        <Route path="/estantes" element={<Estantes />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/editarperfil" element={<EditarPerfil />} />
+        <Route path="/obrasdetalhes" element={<ObrasDetalhes />} />
       </Routes>
     </BrowserRouter>
   );
