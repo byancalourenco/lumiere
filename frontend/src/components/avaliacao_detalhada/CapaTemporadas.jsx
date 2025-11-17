@@ -19,7 +19,7 @@ function CapaTemporadas() {
   // função é chamada toda vez que o usuário marca uma opção.
   //recebe o número da temporada e o valor da resposta.
   const handleChange = (temporada, valor) => {
-    // Atualiza o estado 'respostas' mantendo as respostas antigas (...prev)
+    // atualiza o estado 'respostas' mantendo as respostas antigas (...prev)
     // e alterando apenas a temporada clicada.
     setRespostas((prev) => ({
       ...prev,
@@ -29,7 +29,7 @@ function CapaTemporadas() {
 
   //esta função será chamada quando o usuário clicar em "Publicar".
   const formsSubmit = (e) => {
-    e.preventDefault(); // impede o reload automático da página
+    e.preventDefault(); // impede o reload automático da página (useState)
 
 
    //alert
@@ -37,19 +37,19 @@ function CapaTemporadas() {
 
     // conexao php -- gpt analisar
     /*
-      fetch("https://teu-servidor.com/api/avaliacoes.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      fetch("https://teu-servidor.com/api/avaliacoes.php", { //chama o php na url API (estudar sobre)
+        method: "POST", //metodo que não aparec na url (aula anderson)
+        headers: { //ta especificando o que ta sendo chamado pelo post
+          "Content-Type": "application/json", //convertendo pra json e tal - pro front 
         },
-        body: JSON.stringify(respostas), // envia as respostas em formato JSON
+        body: JSON.stringify(respostas), // envia as respostas em json
       })
-        .then((response) => response.json())
-        .then((data) => {
+        .then((response) => response.json()) //quando a resposta do servidor chegar vai executar esse treco ai
+        .then((data) => { //no caso executar esse proximo treco
           console.log("Resposta do servidor:", data);
           // Aqui pode mostrar uma mensagem de sucesso, limpar formulário etc.
         })
-        .catch((error) => {
+        .catch((error) => { //avisa erro
           console.error("Erro ao enviar:", error);
         });
     */
@@ -85,64 +85,27 @@ function CapaTemporadas() {
                   Temporada {num}:
                 </p>
 
-                {/* Caixa que agrupa as opções de cada temporada */}
                 <div className="container_cor">
 
-                  {/* 👍 Opção: SIM */}
                   <div className="form-check mb-2">
-                    <input
-                      className="form-check-input trequinho_emocao"
-                      type="radio"
-                      name={`avaliacao-${num}`}
-                      id={`sim-${num}`}
-                      value="Sim"
-                      checked={respostas[num] === "Sim"}
-                      onChange={(e) => handleChange(num, e.target.value)}
-                    />
-                    <label
-                      className="form-check-label texto_emocao"
-                      htmlFor={`sim-${num}`}
-                    >
+                    <input className="form-check-input trequinho_emocao" type="radio" name={`avaliacao-${num}`} id={`sim-${num}`} value="Sim"
+                      checked={respostas[num] === "Sim"} onChange={(e) => handleChange(num, e.target.value)}/>
+                    <label className="form-check-label texto_emocao"  htmlFor={`sim-${num}`}>
                       👍 Sim
                     </label>
                   </div>
 
-                  {/* 👎 Opção: NÃO */}
                   <div className="form-check mb-2">
-                    <input
-                      className="form-check-input trequinho_emocao"
-                      type="radio"
-                      name={`avaliacao-${num}`}
-                      id={`nao-${num}`}
-                      value="Não"
-                      checked={respostas[num] === "Não"}
-                      onChange={(e) => handleChange(num, e.target.value)}
-                    />
-                    <label
-                      className="form-check-label texto_emocao"
-                      htmlFor={`nao-${num}`}
-                    >
+                    <input className="form-check-input trequinho_emocao" type="radio" name={`avaliacao-${num}`} id={`nao-${num}`} value="Não" checked={respostas[num] === "Não"}  onChange={(e) => handleChange(num, e.target.value)}/>
+                    <label className="form-check-label texto_emocao" htmlFor={`nao-${num}`}>
                       👎 Não
                     </label>
                   </div>
 
-                  {/* 💬 Opção: MAIS OU MENOS */}
                   <div className="form-check mb-4">
-                    <input
-                      className="form-check-input trequinho_emocao"
-                      type="radio"
-                      name={`avaliacao-${num}`}
-                      id={`maisomenos-${num}`}
-                      value="Mais ou menos"
-                      checked={respostas[num] === "Mais ou menos"}
-                      onChange={(e) => handleChange(num, e.target.value)}
-                    />
-                    <label
-                      className="form-check-label texto_emocao"
-                      htmlFor={`maisomenos-${num}`}
-                      // 💡 CSS pode ajudar a deixar "Mais ou menos" em uma só linha:
-                      // .texto_emocao { white-space: nowrap; }
-                    >
+                    <input className="form-check-input trequinho_emocao" type="radio" name={`avaliacao-${num}`} id={`maisomenos-${num}`} value="Mais ou menos"
+                      checked={respostas[num] === "Mais ou menos"} onChange={(e) => handleChange(num, e.target.value)}/>
+                    <label className="form-check-label texto_emocao" htmlFor={`maisomenos-${num}`}>
                       💬 Mais ou menos
                     </label>
                   </div>
@@ -151,7 +114,6 @@ function CapaTemporadas() {
             ))}
           </div>
 
-          {/* --- BOTÃO DE ENVIO --- */}
           <div className="col-12 text-center mt-4">
             <button type="submit" className="btn btn-primary botao_valeu_a_pena" >
               Publicar
