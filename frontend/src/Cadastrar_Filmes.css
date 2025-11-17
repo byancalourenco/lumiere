@@ -229,8 +229,7 @@
 } 
 @media (max-width: 430px) {
   .dropdown_CF {
-    width: 100%;
-    width: auto;
+    width: 230px;
 
  }
 }
