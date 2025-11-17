@@ -42,7 +42,7 @@ function App() {
         <Route path="/cadastrarSeries" element={<Cadastrar_Series />} />
         <Route path="/cadastrarLivros" element={<Cadastrar_Livros />} />
         <Route path="/cadastrarObras" element={<Cadastrar_Obras />} />
-        <Route path="/Escolhe_Avaliacao" element={<Escolhe_Avaliacao />} />
+        <Route path="/escolheAvaliacao" element={<Escolhe_Avaliacao />} />
       </Routes>
     </BrowserRouter>
   );
