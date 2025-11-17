@@ -1,6 +1,8 @@
 // importa a biblioteca do react, faz funcionar os componentes e blablabla
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// bibliotecas do carrossel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -34,10 +36,10 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/editarperfil" element={<EditarPerfil />} />
         <Route path="/obrasdetalhes" element={<ObrasDetalhes />} />
-        <Route path="/Cadastrar_Filmes" element={<Cadastrar_Filmes />} />
-        <Route path="/Cadastrar_Series" element={<Cadastrar_Series />} />
-        <Route path="/Cadastrar_Livros" element={<Cadastrar_Livros />} />
-        <Route path="/Cadastrar_Obras" element={<Cadastrar_Obras />} />
+        <Route path="/cadastrarFilmes" element={<Cadastrar_Filmes />} />
+        <Route path="/cadastrarSeries" element={<Cadastrar_Series />} />
+        <Route path="/cadastrarLivros" element={<Cadastrar_Livros />} />
+        <Route path="/cadastrarObras" element={<Cadastrar_Obras />} />
       </Routes>
     </BrowserRouter>
   );

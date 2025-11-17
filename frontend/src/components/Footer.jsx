@@ -18,7 +18,7 @@ function Footer(){
                     <div className="col-md-4 col-sm-12">
                         <Link className="linkfooter" to="/inicial#obras">Obras</Link>
                         <Link className="linkfooter" to="/estantes">Estantes</Link>
-                        <Link className="linkfooter">Cadastrar obras</Link>
+                        <Link className="linkfooter" to="/cadastrarObras">Cadastrar obras</Link>
                         <Link className="linkfooter" to="/perfil">Perfil</Link>
                     </div>
                     <div className="col-md-4 col-sm-12">

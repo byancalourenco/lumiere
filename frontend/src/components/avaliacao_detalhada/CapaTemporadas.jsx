@@ -1,14 +1,14 @@
-// Importa o React e o hook useState, que permite armazenar e alterar dados no componente.
+// importa o React e o hook useState, que permite armazenar e alterar dados no componente.
 import React, { useState } from "react";
 
 import capaPrincipe from "../../assets/img/capa-pequeno-principe.jpg";
 
 function CapaTemporadas() {
-  // Guarda o caminho da imagem na variável "capaa"
+  //caminho da imagem na variável "capaa"
   const capaa = capaPrincipe;
 
-  // Cria um estado para armazenar as respostas das temporadas.
-  // Aqui usamos um OBJETO, onde a chave (1, 2, 3, 4...) é o número da temporada
+  //armazena as respostas das temporadas.
+  // chave (1, 2, 3, 4...) é o número da temporada
   // e o valor é a resposta ("Sim", "Não" ou "Mais ou menos").
   const [respostas, setRespostas] = useState({
     1: "",
@@ -16,8 +16,8 @@ function CapaTemporadas() {
     3: "",
   });
 
-  // 🔄 Esta função é chamada toda vez que o usuário marca uma opção.
-  // Ela recebe o número da temporada e o valor da resposta.
+  // função é chamada toda vez que o usuário marca uma opção.
+  //recebe o número da temporada e o valor da resposta.
   const handleChange = (temporada, valor) => {
     // Atualiza o estado 'respostas' mantendo as respostas antigas (...prev)
     // e alterando apenas a temporada clicada.
@@ -27,18 +27,15 @@ function CapaTemporadas() {
     }));
   };
 
-  // ⚙️ Esta função será chamada quando o usuário clicar em "Publicar".
-  // É aqui que no futuro faremos a integração com o backend PHP.
+  //esta função será chamada quando o usuário clicar em "Publicar".
   const formsSubmit = (e) => {
     e.preventDefault(); // impede o reload automático da página
 
-    // Mostra no console as respostas atuais
-    console.log("Respostas enviadas:", respostas);
 
-    // Exibe um alerta apenas para feedback visual (pode ser substituído por uma notificação estilizada no futuro)
+   //alert
     alert("Avaliação enviada!");
 
-    // 💬 Aqui vai o ponto de integração com o backend (PHP ou API REST)
+    // conexao php -- gpt analisar
     /*
       fetch("https://teu-servidor.com/api/avaliacoes.php", {
         method: "POST",
@@ -62,19 +59,14 @@ function CapaTemporadas() {
     // container principal do conteúdo
     <div className="row align-items-center justify-content-center">
 
-      {/* --- TÍTULO DO LIVRO --- */}
       <h3 className="fw-bold mb-3 titulo_av text-center">
         O Pequeno Príncipe
       </h3>
 
-      {/* --- CAPA DO LIVRO --- */}
       <div className="col-md-4 text-center mb-4 mb-md-0">
         <img
           src={capaa}
           alt="Capa do Pequeno Príncipe"
-          // remove a borda branca usando CSS:
-          // basta adicionar no CSS algo como:
-          // .capa_detalhada_temp { border: none; background: none; box-shadow: none; }
           className="img-fluid rounded shadow capa_detalhada_temp"
         />
       </div>
@@ -83,11 +75,10 @@ function CapaTemporadas() {
       <p className="fw-semibold mb-3 texto_ava">AVALIE POR TEMPORADAS:</p>
 
       <div className="container text-center av_temp">
-        {/* Ao enviar o formulário, executa formsSubmit */}
+        {/*formulário executa formsSubmit */}
         <form onSubmit={formsSubmit}>
           <div className="row">
-            {/* Gera automaticamente as temporadas usando map.
-                Assim, se quiser adicionar mais no futuro, basta mudar o array abaixo. */}
+            {/* gera automaticamente as temporadas usando map. (o map cai pegar o item de cada array executar e crair outro com um reultado diferente)*/}
             {[1, 2, 3].map((num) => (
               <div className="col" key={num}>
                 <p className="fw-semibold mb-3 text_temp">

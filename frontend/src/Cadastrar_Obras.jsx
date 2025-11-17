@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Cadastrar_Obras.css';
 import './App.css';
 import LumiereImg from "./assets/img/Lumiere_img.png"; 
+import { Link } from "react-router-dom";
 
 
 function Cadastrar_Obras(){
@@ -35,17 +36,17 @@ function Cadastrar_Obras(){
                     <div className="grid-container_scd">
                         <div className="grid-item-left-second">
                             <div className="first_button">
-                                <button className="btn-pri">Livro</button>
+                                <Link className="btn-pri" to="/cadastrarLivros">Livro</Link>
                             </div>
                         </div>
                         <div className="grid-item-centre-second">
                             <div className="second_button">
-                                <button className="btn-scd">Filme</button>
+                                <Link className="btn-scd" to="/cadastrarFilmes">Filme</Link>
                             </div>
                         </div>
                         <div className="grid-item-right-second">
                             <div className="third_button">
-                                <button className="btn-tdr">Série</button>
+                                <Link className="btn-tdr" to="/cadastrarSeries">Série</Link>
                             </div>
                         </div>
                     </div>

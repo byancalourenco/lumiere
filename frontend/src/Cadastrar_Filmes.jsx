@@ -13,7 +13,7 @@ import l6 from "./assets/img/l6.png";
 
 
 
-function Cadastrar_Livros(){
+function Cadastrar_Filmes(){
     return(
         <main>
             <div className="pag_Filmes">
@@ -104,5 +104,5 @@ function Cadastrar_Livros(){
         </main>
     )
 } 
-export default Cadastrar_Livros;
+export default Cadastrar_Filmes;
 

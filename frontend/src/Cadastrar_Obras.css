@@ -127,6 +127,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
   background-color: white;
   width: 110px;
+  text-decoration: none;
+  color: #001A38;
+  text-align: center;
 }
 .btn-pri:hover, .btn-scd:hover, .btn-tdr:hover {
   background-color: #D9D9D9;
