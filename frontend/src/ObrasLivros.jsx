@@ -1,5 +1,6 @@
 // importa a biblioteca do react, faz funcionar os componentes e blablabla
 import React from "react"; 
+import { Link } from "react-router-dom";
 
 // pega os componentes header e cardcontainer da pasta components
 import Header from "./components/Header";
@@ -51,7 +52,7 @@ function ObrasLivros() {
                   Cadastre ela no nosso sistema!
                 </p>
 
-                <button className="banner-botao">Cadastrar uma nova obra!</button>
+                <Link to="/cadastrarObras" className="banner-botao">Cadastrar uma nova obra!</Link>
               </div>
           </div>
           <div className="filtros-container">

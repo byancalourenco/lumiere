@@ -20,7 +20,6 @@ import Cadastrar_Obras from "./Cadastrar_Obras.jsx";
 import Cadastrar_Series from "./Cadastrar_Series.jsx";
 import Cadastrar_Filmes from "./Cadastrar_Filmes.jsx";
 import Cadastrar_Livros from "./Cadastrar_Livros.jsx";
-import LivroCard from "./components/LivroCard.jsx";
 import Escolhe_Avaliacao from "./Escolhe_Avaliacao.jsx";
 
 
@@ -37,7 +36,7 @@ function App() {
         <Route path="/estantes" element={<Estantes />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/editarperfil" element={<EditarPerfil />} />
-        <Route path="/obrasdetalhes" element={<ObrasDetalhes />} />
+        <Route path="/obrasDetalhes" element={<ObrasDetalhes />} />
         <Route path="/cadastrarFilmes" element={<Cadastrar_Filmes />} />
         <Route path="/cadastrarSeries" element={<Cadastrar_Series />} />
         <Route path="/cadastrarLivros" element={<Cadastrar_Livros />} />

@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const StarIcon = ({ color = "#ffc107", size = 16 }) => (
     <svg
@@ -58,10 +59,10 @@ export default function LivroCardHeader({
                     <p><strong>Editora:</strong> {editora}</p>
                     <p><strong>Ano de publicação:</strong> {ano}</p>
 
-                    <button className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
+                    <Link to="/escolheAvaliacao" className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
                         Quero avaliar esse livro
                         <i className="bi bi-pencil-square me-2 ms-2"></i>
-                    </button>
+                    </Link>
 
                 </Col>
             </Row>

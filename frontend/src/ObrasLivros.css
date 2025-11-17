@@ -203,6 +203,7 @@ section#sec-destaques h2 {
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .banner-botao:hover {
