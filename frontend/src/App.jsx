@@ -14,6 +14,10 @@ import Estantes from "./Estantes.jsx";
 import Perfil from "./Perfil.jsx";
 import EditarPerfil from "./EditarPerfil.jsx";
 import ObrasDetalhes from "./ObrasDetalhes.jsx";
+import Cadastrar_Obras from "./Cadastrar_Obras.jsx";
+import Cadastrar_Series from "./Cadastrar_Series.jsx";
+import Cadastrar_Filmes from "./Cadastrar_Filmes.jsx";
+import Cadastrar_Livros from "./Cadastrar_Livros.jsx";
 
 
 
@@ -30,6 +34,10 @@ function App() {
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/editarperfil" element={<EditarPerfil />} />
         <Route path="/obrasdetalhes" element={<ObrasDetalhes />} />
+        <Route path="/Cadastrar_Filmes" element={<Cadastrar_Filmes />} />
+        <Route path="/Cadastrar_Series" element={<Cadastrar_Series />} />
+        <Route path="/Cadastrar_Livros" element={<Cadastrar_Livros />} />
+        <Route path="/Cadastrar_Obras" element={<Cadastrar_Obras />} />
       </Routes>
     </BrowserRouter>
   );
