@@ -175,26 +175,26 @@
 }
 .Dropdown_div{
   width: 100%;
-  max-width: 400px; /* keeps it nice on desktop */
+  max-width: 400px; 
   display: flex;
 }
 /* mobile */
 @media (max-width: 430px) {
   .Dropdown_div {
-    max-width: 100%;     /* now it expands fully */
+    max-width: 100%;     
   }
 
   .dropdown_CF {
-    width: 100%;         /* ensures full width */
+    width: 100%;       
   }
 } 
 .image-row {
   display: flex;
-  gap: 8px;        /* space between images */
+  gap: 8px;      
 }
 
 .image-row img {
-  width: 50px;     /* small size */
+  width: 50px;    
   height: 50px;
   object-fit: cover;
   border-radius: 6px;

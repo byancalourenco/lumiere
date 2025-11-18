@@ -27,9 +27,9 @@
 }
 .grid-container_tdr {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* two equal columns */
+    grid-template-columns: 1fr 1fr;
     width: 100%;
-    align-items: left; /* vertically center inside the grid */
+    align-items: left;
 }
 .grid-item-left-third{
     display: flex;
@@ -38,18 +38,18 @@
 }
 .grid-item-right-third{
     display: flex;
-    flex-direction: column;   /* <- makes them vertical */
+    flex-direction: column;
     width: 100%;
 
 }
 .Gray_Rectangle{
-    width: 300px;        /* change size */
-    height: 350px;       /* change size */
-    background-color: #D9D9D9;  /* light gray */
-    border-radius: 8px;  /* optional */
+    width: 300px;   
+    height: 350px;   
+    background-color: #D9D9D9; 
+    border-radius: 8px;
     display: flex;
-    justify-content: center;   /* center horizontally */
-    align-items: center;       /* center vertically */
+    justify-content: center;   
+    align-items: center;   
 }
 .Box_middle{
     justify-content: center;
