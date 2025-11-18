@@ -69,7 +69,7 @@ function Capa() {
 
 {/* Formulário De valer a pena*/}
           <form onSubmit={formsSubmit}> 
-            <p className="fw-semibold mb-3">Valeu a pena ler esse livro?</p>
+            <p className="fw-semibold mb-3">Esta obra valeu a pena?</p>
 
             <div className="form-check mb-2 ">
               <input 

@@ -57,7 +57,7 @@ function Inicial(){
                                 </div>
                             </div>
                             <p>Avalie os filmes que marcaram você!</p>
-                            <Link className="btnavaliar">Avaliar</Link>
+                            <Link className="btnavaliar" to="/obrasFilmes">Avaliar</Link>
                         </div>
 
                         <div className="g-col-md-4 g-col-sm-12 cardopicao h-100">
@@ -70,7 +70,7 @@ function Inicial(){
                                 </div>
                             </div>
                             <p>Compartilhe o que achou da sua série favorita!</p>
-                            <Link className="btnavaliar">Avaliar</Link>
+                            <Link className="btnavaliar" to="/obrasSeries">Avaliar</Link>
                         </div>
 
                         <div className="g-col-md-4 g-col-sm-12 cardopicao h-100">

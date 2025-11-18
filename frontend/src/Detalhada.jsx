@@ -6,6 +6,7 @@ import Header from "./components/Header.jsx";
 import Botoes from "./components/avaliacao_detalhada/Botoes.jsx";
 import Capa from "./components/avaliacao_detalhada/Capa.jsx";
 import Comentario from "./components/avaliacao_detalhada/Comentario.jsx";
+import Footer from "./components/Footer.jsx";
 
 import "./App.css";
 import "./Detalhada.css";
@@ -28,6 +29,7 @@ function Detalhada() {
         <Comentario />
       </section> 
 
+      <Footer />
     </main>
   );
 }

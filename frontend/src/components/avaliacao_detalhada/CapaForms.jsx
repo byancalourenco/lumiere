@@ -64,10 +64,11 @@ function CapaForms() {
             
         </div>
 
-        {/* Critérios: */}
 
+        
+        {/* Critérios - Livros */}
         <div>
-            <p className="fw-semibold mb-3 titulo_av_criterios">Avalie essa obra por critérios?</p>
+            <p className="fw-semibold mb-3 titulo_av_criterios">Avalie essa obra por critérios:</p>
 
             <table className="table tabela_criterio">
                 <thead>
@@ -112,6 +113,66 @@ function CapaForms() {
                                 <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
                                  <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        {/* Critérios - FIlmes e Séries*/}
+        <div>
+            <p className="fw-semibold mb-3 titulo_av_criterios">Avalie essa obra por critérios:</p>
+
+            <table className="table tabela_criterio">
+                <thead>
+                    <tr>
+                    <th scope="col">Critério</th>
+                    <th scope="col">Sua nota:</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">Roteiro:</th>
+                            <td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Personagens:</th>
+                            <td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Atuação:</th>
+                            <td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Trilha Sonora:</th>
+                            <td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Fotografia:</th>
+                            <td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Originalidade:</th>
+                            <td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
+                    </tr>
+
                 </tbody>
             </table>
 

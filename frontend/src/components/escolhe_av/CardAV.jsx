@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React from "react"; 
 import { Link } from "react-router-dom";
 
 function CardAV(){
@@ -9,7 +9,7 @@ function CardAV(){
                <div className="container_av_rapida">
                     <div className="col card_escolhe">
                         <h5 className="titulo_card_escolha">Quero fazer uma avaliação rápida! </h5>
-                        <Link className="livro-btn" to="/obrasDetalhes">
+                        <Link className="livro-btn" to="/rapida">
                             Fazer uma avaliação rápida
                         </Link >
                     </div>
@@ -23,7 +23,7 @@ function CardAV(){
                 <div className="container_av_rapida">
                     <div className="col card_escolhe">
                         <h5 className="titulo_card_escolha">Quero fazer uma avaliação detalhada!</h5>
-                        <Link className="livro-btn" to="/obrasDetalhes">
+                        <Link className="livro-btn" to="/detalhada">
                             Fazer uma avaliação detalhada
                         </Link >
                     </div>

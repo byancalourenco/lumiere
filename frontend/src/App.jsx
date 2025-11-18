@@ -21,6 +21,12 @@ import Cadastrar_Series from "./Cadastrar_Series.jsx";
 import Cadastrar_Filmes from "./Cadastrar_Filmes.jsx";
 import Cadastrar_Livros from "./Cadastrar_Livros.jsx";
 import Escolhe_Avaliacao from "./Escolhe_Avaliacao.jsx";
+import Rapida from "./Rapida.jsx";
+import Detalhada from "./Detalhada.jsx";
+import CriterioEmocao from "./CriterioEmocao.jsx";
+import Temporadas from "./TemporadasDetalhada.jsx";
+import ObrasFilmes from "./ObrasFilmes.jsx";
+import ObrasSeries from "./ObrasSeries.jsx";
 
 
 
@@ -42,6 +48,12 @@ function App() {
         <Route path="/cadastrarLivros" element={<Cadastrar_Livros />} />
         <Route path="/cadastrarObras" element={<Cadastrar_Obras />} />
         <Route path="/escolheAvaliacao" element={<Escolhe_Avaliacao />} />
+        <Route path="/rapida" element={<Rapida />} />
+        <Route path="/detalhada" element={<Detalhada />} />
+        <Route path="/criterioEmocao" element={<CriterioEmocao />} />
+        <Route path="/temporadas" element={<Temporadas />} />
+        <Route path="/obrasFilmes" element={<ObrasFilmes />} />
+        <Route path="/obrasSeries" element={<ObrasSeries />} />
       </Routes>
     </BrowserRouter>
   );
