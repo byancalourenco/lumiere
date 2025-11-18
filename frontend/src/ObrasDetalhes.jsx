@@ -79,7 +79,7 @@ function ObrasDetalhes() {
       </section>
       <Footer />
     </main>
-  );
+  ) ;
 }
 
 export default ObrasDetalhes;
