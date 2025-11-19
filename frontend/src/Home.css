@@ -1,7 +1,7 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
 }
 
 .textobranco{
@@ -35,7 +35,7 @@
     float: right; 
 }
 
-.botaoentrar{
+.botaoentrar {
     text-decoration: none;
     border: 1px solid #EDE7DB;
     border-radius: 40px;

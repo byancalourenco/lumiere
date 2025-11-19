@@ -3,16 +3,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // pega os componentes header e cardcontainer da pasta components
-import Header from "./components/Header";
-import CardContainer from "./components/CardContainer";
-import LivroCard from "./components/LivroCardADM";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import CardContainer from "../components/CardContainer";
+import SerieCardADM from "../componentsAdm/SerieCardADM";
+import Footer from "../components/Footer";
 
 // importa o css
-import "./ObrasLivros.css";
+import "../ObrasLivros.css";
 
 // função principal
-function ObrasLivrosADM() {
+function ObrasSeriesADM() {
 
   // estrutura visual | interface 
   return (
@@ -22,7 +22,7 @@ function ObrasLivrosADM() {
 
       {/* area principal da pagina */}
       <main>
-        <h1 className="titulo-pagina">LIVROS</h1>
+        <h1 className="titulo-pagina">FILMES</h1>
         <section id="sec-destaques">
           <h2>Destaques</h2>
           <CardContainer />
@@ -69,14 +69,12 @@ function ObrasLivrosADM() {
               </select>
           </div>
           
-          <LivroCard
-            capa="https://m.media-amazon.com/images/I/81m1s4wIPML.jpg"
+          <SerieCardADM
+            capa="https://br.web.img2.acsta.net/medias/nmedia/18/93/88/04/20282944.jpg"
             titulo="Harry Potter e o Prisioneiro de Azkaban"
-            estrelas={4}
-            autor="J. K. Rowling"
-            editora="Rocco (no Brasil)"
-            ano={1999}
-            anoBrasil={2000}
+            estrelas={5}
+            diretor="Alfonso Cuarón"
+            lancamento="4 de junho de 2004 (Brasil)"
           />
         </section>
       </main>
@@ -86,4 +84,4 @@ function ObrasLivrosADM() {
   );
 }
 
-export default ObrasLivrosADM;
+export default ObrasSeriesADM;

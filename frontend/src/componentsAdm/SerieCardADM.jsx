@@ -13,14 +13,14 @@ export default function SerieCardADM({ capa, titulo, estrelas, autor, editora, a
           {"★".repeat(estrelas)}
         </div>
 
-        <p><strong>Diretor:</strong> {autor}</p>
-        <p><strong>Gênero:</strong> {editora}</p>
-        <p><strong>Ano de publicação:</strong> {ano} (original) / {anoBrasil} (Brasil)</p>
+        <p><strong>Diretor:</strong> {diretor}</p>
+        <p><strong>Gênero:</strong> {genero}</p>
+        <p><strong>Data de lançamento:</strong> {lancamento}</p>
 
         
         <div className="dropdown">
           <a className="btn btn-secondary dropdown-toggle drop_container" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Quero gerenciar esse livro!
+            Quero gerenciar essa série!
           </a>
 
           <ul className="dropdown-menu drop_lista">

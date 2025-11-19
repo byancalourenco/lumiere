@@ -1,7 +1,7 @@
 import "./LivroCard.css";
 import { Link } from "react-router-dom";
 
-export default function LivroCard({ capa, titulo, estrelas, autor, editora, ano, anoBrasil }) {
+export default function FilmeCardADM({ capa, titulo, estrelas, autor, editora, ano, anoBrasil }) {
   return (
     <div className="livro-card">
       <img src={capa} alt={titulo} className="livro-capa" />
@@ -13,14 +13,14 @@ export default function LivroCard({ capa, titulo, estrelas, autor, editora, ano,
           {"★".repeat(estrelas)}
         </div>
 
-        <p><strong>Autor:</strong> {autor}</p>
-        <p><strong>Editora:</strong> {editora}</p>
-        <p><strong>Ano de publicação:</strong> {ano} (original) / {anoBrasil} (Brasil)</p>
+        <p><strong>Diretor:</strong> {diretor}</p>
+        <p><strong>Gênero:</strong> {genero}</p>
+        <p><strong>Data de lançamento:</strong> {lancamento}</p>
 
         
         <div className="dropdown">
           <a className="btn btn-secondary dropdown-toggle drop_container" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Quero gerenciar esse livro!
+            Quero gerenciar esse filme!
           </a>
 
           <ul className="dropdown-menu drop_lista">
