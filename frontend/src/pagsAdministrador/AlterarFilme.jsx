@@ -1,22 +1,30 @@
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
+// importa a biblioteca do react, faz funcionar os componentes e blablabla
+import React from "react"; 
+import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Cadastrar_Filmes.css';
-import './App.css';
-import Lumiere2 from "./assets/img/Lumiere_img.png";
-import l from "./assets/img/l.png";
-import l2 from "./assets/img/l2.png";
-import l3 from "./assets/img/l3.png";
-import l4 from "./assets/img/l4.png";
-import l5 from "./assets/img/l5.png";
-import l6 from "./assets/img/l6.png";
 
+// pega os componentes header e cardcontainer da pasta components
+import Header from "../components/Header";
+import CardContainer from "../components/CardContainer";
+import FilmeCardADM from "../componentsAdm/FilmeCardADM";
+import Footer from "../components/Footer";
 
+// importa o css
+import "../Cadastrar_Filmes.css";
 
-function Cadastrar_Filmes(){
+function AlterarFilme({ onSelect }){  //onSelect recebe o componente
+    // contante para av. indicativa
+    const opcoes = [
+        { valor: "L", cor: "#3CA63C" },
+        { valor: "10", cor: "#1D74BB" },
+        { valor: "12", cor: "#F3C425" },
+        { valor: "14", cor: "#D87A2E" },
+        { valor: "16", cor: "#C92124" },
+        { valor: "18", cor: "#000000" },
+      ];
+
     return(
-        <main>
-            <div className="pag_Filmes">
+        <div className="pag_Filmes">
                 <Header />
                 <section>
                     <h2 className="Main_Title_CO">CADASTRAR NOVA OBRA</h2>
@@ -69,19 +77,18 @@ function Cadastrar_Filmes(){
                                     </select>
                                 </div>
                             </div> 
+
+                            {/* classificação indicativa */}
                             <div className="Class_Indic">
                                 <div className="Tit_Nome">
                                     <label className="Tit_Nome_Livro">Classificação Indicativa:</label>
                                 </div>
-                                <div className="real_class_indic">
-                                    <div className="image-row">
-                                        <img src="/src/assets/img/l.png" alt="" />
-                                        <img src="/src/assets/img/l2.png" alt="" />
-                                        <img src="/src/assets/img/l3.png" alt="" />
-                                        <img src="/src/assets/img/l4.png" alt="" />
-                                        <img src="/src/assets/img/l5.png" alt="" />
-                                        <img src="/src/assets/img/l6.png" alt="" />
-                                    </div>
+                                <div style={{ display: "flex", gap: "10px" }}>
+                                    {opcoes.map((item) => (
+                                        <button className="botoes_inidicativo" key={item.valor} onClick={() => onSelect(item.valor)} style={{backgroundColor: item.cor,}} >
+                                            {item.valor}
+                                        </button>
+                                    ))}
                                 </div>
                             </div>  
                         </div>
@@ -95,15 +102,12 @@ function Cadastrar_Filmes(){
                         <textarea type="text" className="Big_Box_Livro" placeholder="Sinopse" />
                     </div>
                     <div className="botao_cad">
-                        <button className="btn-cad">Cadastrar filme</button>
+                        <button className="btn-cad">Confirmar alteração da obra</button>
                     </div>
                 </section>
 
             </div>
-
-            <Footer/>
-        </main>
     )
-} 
-export default Cadastrar_Filmes;
+}
 
+export default AlterarFilme;

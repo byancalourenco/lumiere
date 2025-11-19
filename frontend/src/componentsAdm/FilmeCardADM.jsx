@@ -1,7 +1,7 @@
-import "./LivroCard.css";
+import "../components/LivroCard.css";
 import { Link } from "react-router-dom";
 
-export default function FilmeCardADM({ capa, titulo, estrelas, autor, editora, ano, anoBrasil }) {
+export default function FilmeCardADM({ capa, titulo, estrelas, diretor, genero, lancamento }) {
   return (
     <div className="livro-card">
       <img src={capa} alt={titulo} className="livro-capa" />

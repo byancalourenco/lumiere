@@ -27,6 +27,7 @@ import CriterioEmocao from "./CriterioEmocao.jsx";
 import Temporadas from "./TemporadasDetalhada.jsx";
 import ObrasFilmes from "./ObrasFilmes.jsx";
 import ObrasSeries from "./ObrasSeries.jsx";
+import AlterarFilme from "./pagsAdministrador/AlterarFilme.jsx";
 
 
 
@@ -54,6 +55,7 @@ function App() {
         <Route path="/temporadas" element={<Temporadas />} />
         <Route path="/obrasFilmes" element={<ObrasFilmes />} />
         <Route path="/obrasSeries" element={<ObrasSeries />} />
+        <Route path="/alterarFilme" element={<AlterarFilme />} />
       </Routes>
     </BrowserRouter>
   );

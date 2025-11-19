@@ -110,6 +110,18 @@
     border: 1px solid #001A38;
     transition: 0.5s;
 }
+
+.botoes_inidicativo{
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  fontSize: 20px;
+  fontWeight: bold;
+}
+
 @media (max-width: 1285px) {
   .grid-item-left-third {
     justify-content: center;
