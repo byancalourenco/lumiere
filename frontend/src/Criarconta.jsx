@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Login.css";
 import { Link } from "react-router-dom";
 
 function Criarconta() {
+
+    // Estados dos campos
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [perfil, setPerfil] = useState("Administrador"); // padrão
+
+    // Função para enviar cadastro
+    const cadastrar = async (e) => {
+        e.preventDefault();
+
+        try {
+            const resposta = await fetch("http://localhost/backlumiere/usuarios/cadastrar.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nome,
+                    email,
+                    senha,
+                    tipo_usuario: perfil
+                }),
+            });
+
+            const dados = await resposta.json();
+            alert(dados.mensagem);
+        } catch (erro) {
+            console.log("Erro ao cadastrar:", erro);
+        }
+    };
+
     return (
         <div className="container-fluid p-0">
-            <style>
-            {`@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');`}
-            </style>
             <div className="row">
                 <div className="col-md-6 col-sm-12 fazerlogin divazul">
                     <h1 className="textobranco textoleft" style={{fontWeight: "700"}}>Já possui uma conta?</h1>
@@ -24,34 +53,71 @@ function Criarconta() {
 
                 <div className="col-md-6 col-sm-12 entrar divbranca">
                     <h1 className="textoazul" style={{fontWeight: "700", textAlign: "left"}}>Crie sua conta</h1>
-                    <form action="" method="post">
+                    
+                    <form onSubmit={cadastrar}>
 
                         <div className="divnome">
-                            <img className="imgpessoa" src="/img/email.png" alt=""/>
-                            <label htmlFor="exampleFormControlInput1" className="form-label">Nome completo</label>
+                            <label className="form-label">Nome completo</label>
                         </div>
-                        <input type="text" className="form-control input" id="exampleFormControlInput1" placeholder="Seu nome completo" />
+                        <input
+                            type="text"
+                            className="form-control input"
+                            placeholder="Seu nome completo"
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)}
+                            required
+                        />
 
                         <div className="divemail">
-                            <img className="imgpessoa" src="/img/email.png" alt=""/>
-                            <label htmlFor="exampleFormControlInput1" className="form-label">Email</label>
+                            <label className="form-label">Email</label>
                         </div>
-                        <input type="email" className="form-control input" id="exampleFormControlInput1" placeholder="Seu email"/>
+                        <input
+                            type="email"
+                            className="form-control input"
+                            placeholder="Seu email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
 
                         <div className="divsenha">
-                            <img className="imgsenha" src="/img/senha.png" alt=""/>
-                            <label htmlFor="inputPassword5" className="form-label textoazul">Senha</label>
+                            <label className="form-label textoazul">Senha</label>
                         </div>
-                        <input type="password" id="inputPassword5" className="form-control input" aria-describedby="passwordHelpBlock" placeholder="Sua senha"/>
+                        <input
+                            type="password"
+                            className="form-control input"
+                            placeholder="Sua senha"
+                            value={senha}
+                            onChange={(e) => setSenha(e.target.value)}
+                            required
+                        />
 
-                            <div className="perfil-toggle" role="group" aria-label="Escolha de perfil">
-                                <input type="radio" className="btn-check" name="perfil" id="admin" autoComplete="off" defaultChecked />
-                                <label className="btn btn-outline-custom" htmlFor="admin">Administrador</label>
+                        <div className="perfil-toggle" role="group">
 
-                                <input type="radio" className="btn-check" name="perfil" id="avaliador" autoComplete="off"/>
-                                <label className="btn btn-outline-custom" htmlFor="avaliador">Avaliador</label>
-                            </div>
+                            <input
+                                type="radio"
+                                className="btn-check"
+                                name="perfil"
+                                id="admin"
+                                autoComplete="off"
+                                value="Administrador"
+                                checked={perfil === "Administrador"}
+                                onChange={(e) => setPerfil(e.target.value)}
+                            />
+                            <label className="btn btn-outline-custom" htmlFor="admin">Administrador</label>
 
+                            <input
+                                type="radio"
+                                className="btn-check"
+                                name="perfil"
+                                id="avaliador"
+                                autoComplete="off"
+                                value="Avaliador"
+                                checked={perfil === "Avaliador"}
+                                onChange={(e) => setPerfil(e.target.value)}
+                            />
+                            <label className="btn btn-outline-custom" htmlFor="avaliador">Avaliador</label>
+                        </div>
 
                         <input className="btnentrar textobranco btn" type="submit" value="Criar conta" />
                     </form>
