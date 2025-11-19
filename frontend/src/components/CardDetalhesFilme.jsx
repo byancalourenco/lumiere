@@ -57,7 +57,7 @@ export default function CardDetalhesFilme({
                     <p><strong>Gênero:</strong> {genero}</p>
                     <p><strong>Ano de lançamento:</strong> {ano}</p>
 
-                    <Link to="/escolheAvaliacao" className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
+                    <Link to="/escolheAvaliacao/filme" className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
                         Quero avaliar esse filme!
                         <i className="bi bi-pencil-square me-2 ms-2"></i>
                     </Link>

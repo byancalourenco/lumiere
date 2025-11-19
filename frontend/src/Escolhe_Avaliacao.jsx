@@ -1,12 +1,13 @@
 import React from "react"; 
-import LivroCardHeader from "./components/CardDetalhes.jsx";
+import { useParams } from "react-router-dom";
 import capa from "./assets/img/minhavida1.jpg";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import CardEscolhe from "./components/escolhe_av/CardEscolhe.jsx";
+import CardEscolheLivro from "./components/escolhe_av/CardEscolheLivro.jsx";
+import CardEscolheFilmeSerie from "./components/escolhe_av/CardEscolheFilmeSerie.jsx";
 import CardAV from "./components/escolhe_av/CardAV.jsx";
 
 import "./App.css";
@@ -15,6 +16,9 @@ import "./ObrasDetalhes.css";
 import "./Escolhe_Avaliacao.css";
 
 function Escolhe_Avaliacao() {
+
+  const { tipo } = useParams(); // recebe livro, filme ou serie
+
   return (
     <main>
 
@@ -22,7 +26,10 @@ function Escolhe_Avaliacao() {
       <h1 className="titulo-pagina ">AVALIAÇÕES</h1>
       
       <section>
-        <CardEscolhe 
+        {tipo === "livro" && <CardEscolheLivro />}
+        {tipo === "filme" && <CardEscolheFilmeSerie />}
+        {tipo === "serie" && <CardEscolheFilmeSerie />}
+        {/* <CardEscolhe 
           capa={capa}
           titulo="Minha vida fora de série – 1ª temporada"
           estrelas={4}
@@ -30,11 +37,11 @@ function Escolhe_Avaliacao() {
           editora="Gutenberg"
           ano="2011"
           anoBrasil="2012"
-        />
+        /> */}
       </section>
 
      <section>
-        <CardAV />
+        <CardAV tipo={tipo} />
      </section> 
 
       <section>

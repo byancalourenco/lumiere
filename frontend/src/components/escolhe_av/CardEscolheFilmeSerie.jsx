@@ -1,6 +1,6 @@
 import React, { useState } from "react"; 
 
-function CardEscolhe({ capa, titulo, estrelas, autor, editora, ano, anoBrasil }){
+function CardEscolheFilmeSerie({ capa, titulo, estrelas, diretor, genero, lancamento }){
     return(
     <div className="livro_card_escolher">
       <img src={capa} alt={titulo} className="livro_capa_escolhe" />
@@ -12,12 +12,12 @@ function CardEscolhe({ capa, titulo, estrelas, autor, editora, ano, anoBrasil })
           {"★".repeat(estrelas)}
         </div>
 
-        <p><strong>Autor:</strong> {autor}</p>
-        <p><strong>Editora:</strong> {editora}</p>
-        <p><strong>Ano de publicação:</strong> {ano} (original) / {anoBrasil} (Brasil)</p>
+        <p><strong>Diretor:</strong> {diretor}</p>
+        <p><strong>Gênero:</strong> {genero}</p>
+        <p><strong>Lançamento:</strong> {lancamento}</p>
       </div>
     </div>
     );
 }
 
-export default CardEscolhe;
+export default CardEscolheFilmeSerie;

@@ -1,7 +1,7 @@
 import React from "react"; 
 import { Link } from "react-router-dom";
 
-function CardAV(){
+function CardAV({ tipo }){
     return(
         <div className="container text-center">
             
@@ -23,7 +23,9 @@ function CardAV(){
                 <div className="container_av_rapida">
                     <div className="col card_escolhe">
                         <h5 className="titulo_card_escolha">Quero fazer uma avaliação detalhada!</h5>
-                        <Link className="livro-btn" to="/detalhada">
+
+                        {/* usa o tipo para montar o link */}
+                        <Link className="livro-btn" to={`/detalhada/${tipo}`}>
                             Fazer uma avaliação detalhada
                         </Link >
                     </div>

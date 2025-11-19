@@ -43,15 +43,15 @@ function App() {
         <Route path="/estantes" element={<Estantes />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/editarperfil" element={<EditarPerfil />} />
-        <Route path="/obrasDetalhes" element={<ObrasDetalhes />} />
+        <Route path="/obrasdetalhes/:tipo" element={<ObrasDetalhes />} />
         <Route path="/cadastrarFilmes" element={<Cadastrar_Filmes />} />
         <Route path="/cadastrarSeries" element={<Cadastrar_Series />} />
         <Route path="/cadastrarLivros" element={<Cadastrar_Livros />} />
         <Route path="/cadastrarObras" element={<Cadastrar_Obras />} />
-        <Route path="/escolheAvaliacao" element={<Escolhe_Avaliacao />} />
+        <Route path="/escolheAvaliacao/:tipo" element={<Escolhe_Avaliacao />} />
         <Route path="/rapida" element={<Rapida />} />
-        <Route path="/detalhada" element={<Detalhada />} />
-        <Route path="/criterioEmocao" element={<CriterioEmocao />} />
+        <Route path="/detalhada/:tipo" element={<Detalhada />} />
+        <Route path="/criterioEmocao/:tipo" element={<CriterioEmocao />} />
         <Route path="/temporadas" element={<Temporadas />} />
         <Route path="/obrasFilmes" element={<ObrasFilmes />} />
         <Route path="/obrasSeries" element={<ObrasSeries />} />

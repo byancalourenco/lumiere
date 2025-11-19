@@ -57,7 +57,7 @@ export default function CardDetalhesSerie({
                     <p><strong>Gênero:</strong> {genero}</p>
                     <p><strong>Ano de lançamento:</strong> {ano}</p>
 
-                    <Link to="/escolheAvaliacao" className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
+                    <Link to="/escolheAvaliacao/serie" className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
                         Quero avaliar essa série!
                         <i className="bi bi-pencil-square me-2 ms-2"></i>
                     </Link>

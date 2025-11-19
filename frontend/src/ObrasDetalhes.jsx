@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -21,12 +22,19 @@ import capa from "./assets/img/minhavida1.jpg";
 
 
 function ObrasDetalhes() {
+
+  const { tipo } = useParams(); // recebe livro, filme ou serie
+
   return (
     <main>
       <Header />
       <section className="livroobrassection">
+
+        {tipo === "livro" && <LivroCardHeader />}
+        {tipo === "filme" && <CardDetalhesFilme />}
+        {tipo === "serie" && <CardDetalhesSerie />}
         
-        <LivroCardHeader
+        {/* <LivroCardHeader
           capa={capa}
           titulo="Minha vida fora de série – 1ª temporada"
           autor="Paula Pimenta"
@@ -35,7 +43,7 @@ function ObrasDetalhes() {
           ano="2011"
           rating={4}  // muda a quantidade de estrelas
 
-        />
+        /> */}
 
         <Sinopse
           texto="Priscila, com 13 anos, se muda para Belo Horizonte com a mãe. Ela sente falta da vida antiga e da família e tenta se adaptar à nova cidade, a nova escola e aos novos amigos, percebendo que precisa encontrar a si mesma durante a mudança."

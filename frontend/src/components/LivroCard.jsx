@@ -17,7 +17,7 @@ export default function LivroCard({ capa, titulo, estrelas, autor, editora, ano,
         <p><strong>Editora:</strong> {editora}</p>
         <p><strong>Ano de publicação:</strong> {ano} (original) / {anoBrasil} (Brasil)</p>
 
-        <Link className="livro-btn" to="/obrasDetalhes">
+        <Link className="livro-btn" to="/obrasDetalhes/livro">
           Quero avaliar esse livro!
           <span className="material-icons">search</span>
         </Link >
