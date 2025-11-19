@@ -18,7 +18,6 @@ function Escolhe_Avaliacao() {
   return (
     <main>
 
-      <h1 className="titulo-pagina ">AVALIAÇÕES</h1>
       <Header />
       <h1 className="titulo-pagina ">AVALIAÇÕES</h1>
       

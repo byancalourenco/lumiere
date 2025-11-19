@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Header from "./components/Header.jsx";
 import Botoes from "./components/avaliacao_detalhada/Botoes.jsx";
 import CapaForms from "./components/avaliacao_detalhada/CapaForms.jsx";
+import CapaFormsFilmeSerie from "./components/avaliacao_detalhada/CapaFormsFilmeSerie.jsx"
 
 
 import "./App.css";
@@ -22,6 +23,9 @@ function CriterioEmocao(){
             <section>
                 <CapaForms />
             </section>
+            {/* <section>
+                <CapaFormsFilmeSerie />
+            </section> */}
         </main>    
     );
 }

@@ -126,6 +126,41 @@
     color: rgb(255, 193, 7);
 }
 
+
+/* ________________adm______________________ */
+.drop_container{
+  background-color: #0B2239  !important;
+  color: #fff;
+  border: #0B2239;
+  border-radius: 15px;
+  align-items: left !important;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: -8px;
+}
+
+.drop_container:hover {
+  background-color: #0B2239;
+  color: #fff;
+}
+.drop_container:focus,
+.drop_container:active {
+  background-color: #0B2239 !important;
+  color: #fff !important;
+}
+
+.drop_lista{
+  width: 100%;
+  padding: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
 /* Responsividade */
 @media (max-width: 768px) {
   .criterios-coluna {

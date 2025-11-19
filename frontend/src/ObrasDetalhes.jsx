@@ -11,6 +11,8 @@ import LivroCardHeader from "./components/CardDetalhes.jsx";
 import Sinopse from "./components/Sinopse.jsx";
 import AvaliacaoRapidaCard from "./components/AvaliacaoRapida.jsx";
 import AvaliacaoDetalhadaCard from "./components/AvaliacaoDetalhada.jsx";
+import CardDetalhesFilme from "./components/CardDetalhesFilme.jsx";
+import CardDetalhesSerie from "./components/CardDetalhesSerie.jsx";
 
 
 import capa from "./assets/img/minhavida1.jpg";
@@ -23,6 +25,7 @@ function ObrasDetalhes() {
     <main>
       <Header />
       <section className="livroobrassection">
+        
         <LivroCardHeader
           capa={capa}
           titulo="Minha vida fora de série – 1ª temporada"
@@ -77,6 +80,15 @@ function ObrasDetalhes() {
           />
         </div>
       </section>
+
+      {/* <section>
+        <CardDetalhesFilme />    
+      </section>       */}
+      
+      {/* <section>
+        <CardDetalhesSerie />
+      </section> */}
+
       <Footer />
     </main>
   ) ;

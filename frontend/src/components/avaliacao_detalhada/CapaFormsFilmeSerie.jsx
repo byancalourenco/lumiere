@@ -1,7 +1,7 @@
 import React from "react";
 import capaPrincipe from "../../assets/img/capa-pequeno-principe.jpg";
 
-function CapaForms() {
+function CapaFormsFilmeSerie() {
   const capaa = capaPrincipe;
 
   return (
@@ -65,8 +65,7 @@ function CapaForms() {
         </div>
 
 
-        
-        {/* Critérios - Livros */}
+        {/* Critérios - FIlmes e Séries*/}
         <div>
             <p className="fw-semibold mb-3 titulo_av_criterios">Avalie essa obra por critérios:</p>
 
@@ -80,7 +79,7 @@ function CapaForms() {
                 <tbody>
 
                     <tr>
-                        <th scope="row">Enredo:</th>
+                        <th scope="row">Roteiro:</th>
                             <td>
                                 <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
                                  <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
@@ -94,14 +93,21 @@ function CapaForms() {
                     </tr>
 
                     <tr>
-                        <th scope="row">Fluidez da leitura:</th>
+                        <th scope="row">Atuação:</th>
                             <td>
                                 <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
                                  <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
 
                     <tr>
-                        <th scope="row">Ambientação:</th>
+                        <th scope="row">Trilha Sonora:</th>
+                            <td>
+                                <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
+                                 <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Fotografia:</th>
                             <td>
                                 <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
                                  <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
@@ -113,6 +119,7 @@ function CapaForms() {
                                 <label for="exampleFormControlTextarea1" className="form-label titulo_criterio"></label>
                                  <input type="number"  className="form-control caixa_criterio" id="nota"   placeholder="Digite sua nota..." min="0" max="10" step="0.1" />                            </td>
                     </tr>
+
                 </tbody>
             </table>
 
@@ -129,4 +136,4 @@ function CapaForms() {
   );
 }
 
-export default CapaForms;
+export default CapaFormsFilmeSerie;
