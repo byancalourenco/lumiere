@@ -1,17 +1,31 @@
-import React, { useState } from "react"; //permite criar variáveis que mudam dinamicamente
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-
-function BotoesSeries({ tipo }) {
-  const [ativo, setAtivo] = useState(1); // começa com o 1 ativo
-
+function BotoesSeries() {
   return (
     <div className="navegacao my-4">
-        <Link to={`/detalhada/${tipo}`} className={`naveg ${ativo === 1 ? "active" : ""}`} onClick={() => setAtivo(1)}>1</Link>
-        <Link to={`/criterioEmocao/${tipo}`} className={`naveg ${ativo === 2 ? "active" : ""}`} onClick={() => setAtivo(2)}>2</Link>
-        <Link to="/temporadas" className={`naveg ${ativo === 3 ? "active" : ""}`} onClick={() => setAtivo(3)}>3</Link>
+      <NavLink
+        to="/detalhada/serie"
+        className={({ isActive }) => `naveg ${isActive ? "active" : ""}`}
+      >
+        1
+      </NavLink>
+
+      <NavLink
+        to="/criterioemocao/serie"
+        className={({ isActive }) => `naveg ${isActive ? "active" : ""}`}
+      >
+        2
+      </NavLink>
+
+      <NavLink
+        to="/temporadas"
+        className={({ isActive }) => `naveg ${isActive ? "active" : ""}`}
+      >
+        3
+      </NavLink>
     </div>
-  ); 
+  );
 }
 
 export default BotoesSeries;

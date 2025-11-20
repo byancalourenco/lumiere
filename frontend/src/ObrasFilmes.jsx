@@ -74,6 +74,7 @@ function ObrasFilmes() {
             estrelas={5}
             diretor="Alfonso Cuarón"
             lancamento="4 de junho de 2004 (Brasil)"
+            tipo="filme"
           />
         </section>
       </main>

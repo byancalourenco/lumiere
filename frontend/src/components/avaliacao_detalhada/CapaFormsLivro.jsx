@@ -120,7 +120,7 @@ function CapaForms() {
 
         <div className="col-12 text-center mt-4">
             <button type="submit" className="btn btn-primary botao_valeu_a_pena">
-                Próximo
+                PUblicar
             </button>
         </div>
       </div>

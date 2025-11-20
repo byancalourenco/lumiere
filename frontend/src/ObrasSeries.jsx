@@ -74,6 +74,7 @@ function ObrasSeries() {
             estrelas={5}
             diretor="Irmãos Duffer"
             lancamento="15 de julho de 2016 (EUA)"
+            tipo="serie"
           />
         </section>
       </main>

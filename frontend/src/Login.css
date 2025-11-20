@@ -16,6 +16,7 @@
     justify-content: center;
     height: 100vh;
     padding: 150px;
+
 }
 
 .imgpessoa{
@@ -42,6 +43,7 @@
     border: 1px solid #001A38;
     color: #001A38;
     padding: 10px;
+    background-color: white !important;
 }
 
 .inputremember{padding-top: 60px;}

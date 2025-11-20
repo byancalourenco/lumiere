@@ -1,7 +1,7 @@
 import "./LivroCard.css";
 import { Link } from "react-router-dom";
 
-export default function FilmeCard({ capa, titulo, estrelas, diretor, genero, lancamento }) {
+export default function FilmeCard({ capa, titulo, estrelas, diretor, genero, lancamento, tipo }) {
   return (
     <div className="livro-card">
       <img src={capa} alt={titulo} className="livro-capa" />
@@ -17,7 +17,7 @@ export default function FilmeCard({ capa, titulo, estrelas, diretor, genero, lan
         <p><strong>Gênero:</strong> {genero}</p>
         <p><strong>Lançamento:</strong> {lancamento}</p>
 
-        <Link className="livro-btn" to="/obrasDetalhes/filme">
+        <Link className="livro-btn" to={`/obrasdetalhes/${tipo}`}>
           Quero avaliar esse filme!
           <span className="material-icons">search</span>
         </Link >

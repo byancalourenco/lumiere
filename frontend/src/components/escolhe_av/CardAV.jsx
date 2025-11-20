@@ -24,10 +24,18 @@ function CardAV({ tipo }){
                     <div className="col card_escolhe">
                         <h5 className="titulo_card_escolha">Quero fazer uma avaliação detalhada!</h5>
 
-                        {/* usa o tipo para montar o link */}
+
+                        <Link className="livro-btn" to={
+                            tipo === "livro" 
+                                ? "/detalhada/livro"
+                                : tipo === "filme"
+                                    ? "/detalhada/filme"
+                                    : "/detalhada/serie"
+                        }>Fazer uma avaliação detalhada</Link>
+                        {/* usa o tipo para montar o link
                         <Link className="livro-btn" to={`/detalhada/${tipo}`}>
                             Fazer uma avaliação detalhada
-                        </Link >
+                        </Link > */}
                     </div>
 
                     <div className="col textinho_avra">

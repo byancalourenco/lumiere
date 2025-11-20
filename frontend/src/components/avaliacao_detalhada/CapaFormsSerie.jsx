@@ -1,7 +1,8 @@
 import React from "react";
 import capaPrincipe from "../../assets/img/capa-pequeno-principe.jpg";
+import { Link } from "react-router-dom";
 
-function CapaFormsFilmeSerie() {
+function CapaFormsSerie() {
   const capaa = capaPrincipe;
 
   return (
@@ -126,9 +127,9 @@ function CapaFormsFilmeSerie() {
         </div>
 
         <div className="col-12 text-center mt-4">
-            <button type="submit" className="btn btn-primary botao_valeu_a_pena">
+            <Link to="/temporadas" type="submit" className="btn btn-primary botao_valeu_a_pena">
                 Próximo
-            </button>
+            </Link>
         </div>
       </div>
     </div>
@@ -136,4 +137,4 @@ function CapaFormsFilmeSerie() {
   );
 }
 
-export default CapaFormsFilmeSerie;
+export default CapaFormsSerie;

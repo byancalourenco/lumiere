@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
 import LivroCard from "./components/LivroCard";
 import "./ObrasLivros.css";
+import Footer from "./components/Footer";
 
 function ObrasLivros() {
   // guarda a lista de obras armazena os objetos recebidos do back)
@@ -114,10 +115,13 @@ function ObrasLivros() {
               editora="-"
               ano={obra.ano_lancamento.substring(0, 4)}
               anoBrasil="-"
+              tipo="livro"
             />
           ))}
         </section>
       </main>
+
+      <Footer/>
     </>
   );
 }

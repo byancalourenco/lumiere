@@ -22,8 +22,12 @@ import Cadastrar_Filmes from "./Cadastrar_Filmes.jsx";
 import Cadastrar_Livros from "./Cadastrar_Livros.jsx";
 import Escolhe_Avaliacao from "./Escolhe_Avaliacao.jsx";
 import Rapida from "./Rapida.jsx";
-import Detalhada from "./Detalhada.jsx";
-import CriterioEmocao from "./CriterioEmocao.jsx";
+import DetalhadaFilme from "./DetalhadaFilme.jsx";
+import DetalhadaSerie from "./DetalhadaSerie.jsx";
+import DetalhadaLivro from "./DetalhadaLivro.jsx";
+import CriterioEmocaoFilme from "./CriterioEmocaoFilme.jsx";
+import CriterioEmocaoSerie from "./CriterioEmocaoSerie.jsx";
+import CriterioEmocaoLivro from "./CriterioEmocaoLivro.jsx";
 import Temporadas from "./TemporadasDetalhada.jsx";
 import ObrasFilmes from "./ObrasFilmes.jsx";
 import ObrasSeries from "./ObrasSeries.jsx";
@@ -36,6 +40,7 @@ import ObrasSeriesADM from "./pagsAdministrador/ObrasSeriesADM.jsx"
 import IncialADM from "./pagsAdministrador/InicialADM.jsx"
 import InicialADM from "./pagsAdministrador/InicialADM.jsx";
 import CriarEstante from "./CriarEstante.jsx";
+
 
 
 
@@ -58,8 +63,15 @@ function App() {
         <Route path="/cadastrarObras" element={<Cadastrar_Obras />} />
         <Route path="/escolheAvaliacao/:tipo" element={<Escolhe_Avaliacao />} />
         <Route path="/rapida" element={<Rapida />} />
-        <Route path="/detalhada/:tipo" element={<Detalhada />} />
-        <Route path="/criterioEmocao/:tipo" element={<CriterioEmocao />} />
+        <Route path="/detalhada/filme" element={<DetalhadaFilme />} />
+        <Route path="/criterioemocao/filme" element={<CriterioEmocaoFilme />} />
+        <Route path="/detalhada/serie" element={<DetalhadaSerie />} />
+        <Route path="/criterioemocao/serie" element={<CriterioEmocaoSerie />} />
+        <Route path="/detalhada/livro" element={<DetalhadaLivro />} />
+        <Route path="/criterioemocao/livro" element={<CriterioEmocaoLivro />} />
+
+        {/* <Route path="/detalhada/:tipo" element={<Detalhada />} />
+        <Route path="/criterioEmocao/:tipo" element={<CriterioEmocao />} /> */}
         <Route path="/temporadas" element={<Temporadas />} />
         <Route path="/obrasFilmes" element={<ObrasFilmes />} />
         <Route path="/obrasSeries" element={<ObrasSeries />} />

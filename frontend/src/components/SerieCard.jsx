@@ -1,7 +1,7 @@
 import "./LivroCard.css";
 import { Link } from "react-router-dom";
 
-export default function SerieCard({ capa, titulo, estrelas, diretor, genero, lancamento }) {
+export default function SerieCard({ capa, titulo, estrelas, diretor, genero, lancamento, tipo }) {
   return (
     <div className="livro-card">
       <img src={capa} alt={titulo} className="livro-capa" />
@@ -17,7 +17,7 @@ export default function SerieCard({ capa, titulo, estrelas, diretor, genero, lan
         <p><strong>Gênero:</strong> {genero}</p>
         <p><strong>Lançamento:</strong> {lancamento}</p>
 
-        <Link className="livro-btn" to="/obrasDetalhes/serie">
+        <Link className="livro-btn" to={`/obrasdetalhes/${tipo}`}>
           Quero avaliar esse série!
           <span className="material-icons">search</span>
         </Link >
