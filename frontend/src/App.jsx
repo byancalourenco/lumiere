@@ -1,14 +1,12 @@
-// importa a biblioteca do react, faz funcionar os componentes e blablabla
+// src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// bibliotecas do carrossel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 import Home from "./Home.jsx";
 import Login from "./Login.jsx";
+import EsqueceuSenha from "./EsqueceuSenha.jsx";
 import Criarconta from "./Criarconta.jsx";
 import Inicial from "./Inicial.jsx";
 import ObrasLivros from "./ObrasLivros.jsx";
@@ -36,13 +34,11 @@ import AlterarLivro from "./pagsAdministrador/AlterarLivro.jsx";
 import AlterarSerie from "./pagsAdministrador/AlterarSerie.jsx";
 import ObrasFilmesADM from "./pagsAdministrador/ObrasFilmesADM.jsx";
 import ObrasLivrosADM from "./pagsAdministrador/ObrasLivrosADM.jsx";
-import ObrasSeriesADM from "./pagsAdministrador/ObrasSeriesADM.jsx"
-import IncialADM from "./pagsAdministrador/InicialADM.jsx"
+import ObrasSeriesADM from "./pagsAdministrador/ObrasSeriesADM.jsx";
 import InicialADM from "./pagsAdministrador/InicialADM.jsx";
 import CriarEstante from "./CriarEstante.jsx";
 
-
-
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -51,11 +47,37 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/criarconta" element={<Criarconta />} />
-        <Route path="/inicial" element={<Inicial />} />
+        <Route path="/esqueceusenha" element={<EsqueceuSenha />} />
+
+        {/* rotas protegidas */}
+        <Route
+          path="/inicial"
+          element={
+            <ProtectedRoute>
+              <Inicial />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/perfil"
+          element={
+            <ProtectedRoute>
+              <Perfil />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editarperfil"
+          element={
+            <ProtectedRoute>
+              <EditarPerfil />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* rotas públicas / administrativas (mantenha como antes) */}
         <Route path="/obraslivros" element={<ObrasLivros />} />
         <Route path="/estantes" element={<Estantes />} />
-        <Route path="/perfil" element={<Perfil />} />
-        <Route path="/editarperfil" element={<EditarPerfil />} />
         <Route path="/obrasdetalhes/:tipo" element={<ObrasDetalhes />} />
         <Route path="/cadastrarFilmes" element={<Cadastrar_Filmes />} />
         <Route path="/cadastrarSeries" element={<Cadastrar_Series />} />
@@ -69,9 +91,6 @@ function App() {
         <Route path="/criterioemocao/serie" element={<CriterioEmocaoSerie />} />
         <Route path="/detalhada/livro" element={<DetalhadaLivro />} />
         <Route path="/criterioemocao/livro" element={<CriterioEmocaoLivro />} />
-
-        {/* <Route path="/detalhada/:tipo" element={<Detalhada />} />
-        <Route path="/criterioEmocao/:tipo" element={<CriterioEmocao />} /> */}
         <Route path="/temporadas" element={<Temporadas />} />
         <Route path="/obrasFilmes" element={<ObrasFilmes />} />
         <Route path="/obrasSeries" element={<ObrasSeries />} />
@@ -83,7 +102,6 @@ function App() {
         <Route path="/obrasSeriesADM" element={<ObrasSeriesADM />} />
         <Route path="/inicialADM" element={<InicialADM />} />
         <Route path="/criarEstante" element={<CriarEstante />} />
-
       </Routes>
     </BrowserRouter>
   );

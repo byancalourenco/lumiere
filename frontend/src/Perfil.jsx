@@ -1,60 +1,64 @@
-import React from "react";
+// src/Perfil.jsx
+import React, { useEffect, useState } from "react";
 import InfoPerfil from "./components/InfoPerfil";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ComentarioPerfil from "./components/ComentarioPerfil";
-import { Link } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
+import { pegarSessao, limparSessao } from "./auth";
 import "./perfil.css";
 
-// Lista de comentários
-const comentarios = [
-  {
-    nome: "Gabriely Santos",
-    livro: "O Pequeno Príncipe",
-    estrelas: 5,
-    texto:
-      "É uma obra simples e encantadora, mas cheia de significados profundos. A narrativa leve e poética..."
-  },
-  {
-    nome: "Gabriely Santos",
-    livro: "O Pequeno Príncipe",
-    estrelas: 4,
-    texto:
-      "Uma história tocante que ensina sobre amor, amizade e essência das pessoas..."
-  },
-  {
-    nome: "Gabriely Santos",
-    livro: "O Pequeno Príncipe",
-    estrelas: 5,
-    texto:
-      "Leitura leve, linda e marcante para crianças e adultos..."
-  },
-  {
-    nome: "Gabriely Santos",
-    livro: "O Pequeno Príncipe",
-    estrelas: 5,
-    texto:
-      "Um clássico que todos deveriam ler..."
-  },
-  {
-    nome: "Gabriely Santos",
-    livro: "O Pequeno Príncipe",
-    estrelas: 4,
-    texto:
-      "Reflexivo e emocionante..."
-  },
-  {
-    nome: "Gabriely Santos",
-    livro: "O Pequeno Príncipe",
-    estrelas: 5,
-    texto:
-      "A melhor leitura que já fiz..."
-  },
-];
-
 export default function Perfil() {
+  const [usuarioBanco, setUsuarioBanco] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const sessao = pegarSessao();
+    if (!sessao) {
+      navigate("/login");
+      return;
+    }
+
+    // busca dados atualizados do backend
+    fetch("http://localhost/backlumiere/usuarios/buscar_usuario.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: sessao.email }),
+    })
+      .then((res) => res.json())
+      .then((dados) => {
+        if (dados.status === "ok") setUsuarioBanco(dados.usuario);
+        else setUsuarioBanco(sessao);
+      })
+      .catch((err) => {
+        console.log(err);
+        setUsuarioBanco(sessao);
+      });
+  }, [navigate]);
+
+  const handleLogout = () => {
+    limparSessao();
+    navigate("/login");
+  };
+
+  const comentarios = [
+    {
+      nome: "Gabriely Santos",
+      livro: "O Pequeno Príncipe",
+      estrelas: 5,
+      texto: "É uma obra simples e encantadora, mas cheia de significados profundos. A narrativa leve e poética..."
+    },
+    {
+      nome: "Gabriely Santos",
+      livro: "O Pequeno Príncipe",
+      estrelas: 4,
+      texto: "Uma história tocante que ensina sobre amor, amizade e essência das pessoas..."
+    },
+    // ... (mantenha seus comentários)
+  ];
+
+  if (!usuarioBanco) return null; // ou um loader
+
   return (
     <>
       <Header />
@@ -67,16 +71,16 @@ export default function Perfil() {
             <div className="perfil-avatar"></div>
 
             <InfoPerfil
-              nome="Gabriely Santos"
+              nome={usuarioBanco.nome}
               avaliacoes={13}
-              dataEntrada="20/10/2025"
+              dataEntrada={usuarioBanco.data_cadastro}
             />
           </div>
 
-          <Link className="perfil-btn" to="/editarperfil">
-            Editar perfil
-          </Link>
-
+          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+            <Link className="perfil-btn" to="/editarperfil">Editar perfil</Link>
+            <button className="perfil-btn" onClick={handleLogout}>Sair</button>
+          </div>
         </div>
       </div>
 
