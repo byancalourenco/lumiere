@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Out-2025 às 16:42
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 19/11/2025 às 21:56
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ USE `lumiere`;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `avaliacao_detalhada`
+-- Estrutura para tabela `avaliacao_detalhada`
 --
 
 CREATE TABLE `avaliacao_detalhada` (
@@ -37,10 +37,10 @@ CREATE TABLE `avaliacao_detalhada` (
   `data_avaliacao_det` datetime DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_obras` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `avaliacao_detalhada`
+-- Despejando dados para a tabela `avaliacao_detalhada`
 --
 
 INSERT INTO `avaliacao_detalhada` (`id_avaliacao_det`, `nota`, `comentario`, `opiniao`, `data_avaliacao_det`, `id_usuario`, `id_obras`) VALUES
@@ -53,7 +53,7 @@ INSERT INTO `avaliacao_detalhada` (`id_avaliacao_det`, `nota`, `comentario`, `op
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `avaliacao_rapida`
+-- Estrutura para tabela `avaliacao_rapida`
 --
 
 CREATE TABLE `avaliacao_rapida` (
@@ -64,10 +64,10 @@ CREATE TABLE `avaliacao_rapida` (
   `data_avaliacao_rap` datetime DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_obras` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `avaliacao_rapida`
+-- Despejando dados para a tabela `avaliacao_rapida`
 --
 
 INSERT INTO `avaliacao_rapida` (`id_avaliacao_rap`, `nota`, `comentario`, `opiniao`, `data_avaliacao_rap`, `id_usuario`, `id_obras`) VALUES
@@ -80,7 +80,7 @@ INSERT INTO `avaliacao_rapida` (`id_avaliacao_rap`, `nota`, `comentario`, `opini
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `criterios`
+-- Estrutura para tabela `criterios`
 --
 
 CREATE TABLE `criterios` (
@@ -95,37 +95,67 @@ CREATE TABLE `criterios` (
   `trilha_sonora` int(11) DEFAULT NULL,
   `fotografia` int(11) DEFAULT NULL,
   `id_avaliacao_det` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `estantes`
+-- Estrutura para tabela `estantes`
 --
 
 CREATE TABLE `estantes` (
   `id_estantes` int(11) NOT NULL,
-  `nome_estante` varchar(255) DEFAULT NULL,
+  `nome_estante` varchar(255) NOT NULL,
   `descricao` varchar(255) DEFAULT NULL,
-  `id_usuario` int(11) DEFAULT NULL,
-  `id_obras` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_usuario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `estantes`
+-- Despejando dados para a tabela `estantes`
 --
 
-INSERT INTO `estantes` (`id_estantes`, `nome_estante`, `descricao`, `id_usuario`, `id_obras`) VALUES
-(1, 'Favoritos', 'Obras que mais gostei.', 1, 1),
-(2, 'Para assistir', 'Filmes e séries que quero ver.', 2, 2),
-(3, 'Clássicos', 'Obras antigas e marcantes.', 3, 3),
-(4, 'Romances', 'Filmes e livros românticos.', 4, 5),
-(5, 'Fantasia', 'Histórias com mundos mágicos.', 5, 4);
+INSERT INTO `estantes` (`id_estantes`, `nome_estante`, `descricao`, `id_usuario`) VALUES
+(1, 'Favoritos', 'Obras que mais gostei.', 1),
+(2, 'Para assistir', 'Filmes e séries que quero ver.', 2),
+(3, 'Clássicos', 'Obras antigas e marcantes.', 3),
+(4, 'Romances', 'Filmes e livros românticos.', 4),
+(5, 'Fantasia', 'Histórias com mundos mágicos.', 5),
+(6, '', '', 1),
+(7, 'aa', 'aa', 1),
+(8, 'aaaaaaaaa', 'aaaaaaaaaaaa', 1),
+(10, 'aamo', 'eu vei', NULL),
+(11, 'quero frango', 'amo', NULL),
+(12, 'aaaaaaaaaaaaaaaaa', 'aaaaaaaaaa', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `obras`
+-- Estrutura para tabela `estante_obras`
+--
+
+CREATE TABLE `estante_obras` (
+  `id` int(11) NOT NULL,
+  `id_estantes` int(11) NOT NULL,
+  `id_obras` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `estante_obras`
+--
+
+INSERT INTO `estante_obras` (`id`, `id_estantes`, `id_obras`) VALUES
+(1, 1, 1),
+(2, 1, 3),
+(3, 1, 5),
+(4, 2, 2),
+(5, 2, 4),
+(6, 3, 3),
+(7, 3, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `obras`
 --
 
 CREATE TABLE `obras` (
@@ -138,10 +168,10 @@ CREATE TABLE `obras` (
   `capa` varchar(300) DEFAULT NULL,
   `data_cadastro` datetime DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `obras`
+-- Despejando dados para a tabela `obras`
 --
 
 INSERT INTO `obras` (`id_obras`, `titulo`, `tipo`, `descricao`, `ano_lancamento`, `autor`, `capa`, `data_cadastro`, `id_usuario`) VALUES
@@ -149,12 +179,12 @@ INSERT INTO `obras` (`id_obras`, `titulo`, `tipo`, `descricao`, `ano_lancamento`
 (2, 'Stranger Things', 'Série', 'Crianças enfrentam mistérios sobrenaturais em Hawkins.', '2016-07-15 00:00:00', 'Irmãos Duffer', 'stranger.jpg', '2025-10-30 12:03:50', 2),
 (3, 'Interestelar', 'Filme', 'Um grupo viaja por buracos de minhoca em busca de um novo lar para a humanidade.', '2014-11-07 00:00:00', 'Christopher Nolan', 'interestelar.jpg', '2025-10-30 12:03:50', 2),
 (4, 'Wicked', 'Filme', 'Bruxa verde e rosa sendo amigas.', '2024-11-22 00:00:00', 'Jon M. Chu', 'wicked.jpg', '2025-10-30 12:03:50', 3),
-(5, 'La La Land', 'Filme', 'Um pianista e uma atriz vivem um romance em Los Angeles.', '2016-12-09 00:00:00', 'Damien Chazelle', 'lalaland.jpg', '2025-10-30 12:03:50', 4);
+(5, 'La La Land', 'Filme', 'Um pianista e uma atriz vivem um romance em Los Angeles.', '2016-12-09 00:00:00', 'Damien Chazelle', 'lalaland.png', '2025-10-30 12:03:50', 4);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `temporadas`
+-- Estrutura para tabela `temporadas`
 --
 
 CREATE TABLE `temporadas` (
@@ -162,10 +192,10 @@ CREATE TABLE `temporadas` (
   `numero_temp` int(11) DEFAULT NULL,
   `numero_eps` int(11) DEFAULT NULL,
   `id_obras` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `temporadas`
+-- Despejando dados para a tabela `temporadas`
 --
 
 INSERT INTO `temporadas` (`id_temporadas`, `numero_temp`, `numero_eps`, `id_obras`) VALUES
@@ -178,7 +208,7 @@ INSERT INTO `temporadas` (`id_temporadas`, `numero_temp`, `numero_eps`, `id_obra
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -188,10 +218,10 @@ CREATE TABLE `usuarios` (
   `senha` varchar(255) NOT NULL,
   `data_cadastro` datetime DEFAULT NULL,
   `tipo_usuario` enum('Administrador','Avaliador') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome`, `email`, `senha`, `data_cadastro`, `tipo_usuario`) VALUES
@@ -206,7 +236,7 @@ INSERT INTO `usuarios` (`id_usuario`, `nome`, `email`, `senha`, `data_cadastro`,
 --
 
 --
--- Índices para tabela `avaliacao_detalhada`
+-- Índices de tabela `avaliacao_detalhada`
 --
 ALTER TABLE `avaliacao_detalhada`
   ADD PRIMARY KEY (`id_avaliacao_det`),
@@ -214,7 +244,7 @@ ALTER TABLE `avaliacao_detalhada`
   ADD KEY `id_obras` (`id_obras`);
 
 --
--- Índices para tabela `avaliacao_rapida`
+-- Índices de tabela `avaliacao_rapida`
 --
 ALTER TABLE `avaliacao_rapida`
   ADD PRIMARY KEY (`id_avaliacao_rap`),
@@ -222,42 +252,49 @@ ALTER TABLE `avaliacao_rapida`
   ADD KEY `id_obras` (`id_obras`);
 
 --
--- Índices para tabela `criterios`
+-- Índices de tabela `criterios`
 --
 ALTER TABLE `criterios`
   ADD PRIMARY KEY (`id_criterios`),
   ADD KEY `id_avaliacao_det` (`id_avaliacao_det`);
 
 --
--- Índices para tabela `estantes`
+-- Índices de tabela `estantes`
 --
 ALTER TABLE `estantes`
   ADD PRIMARY KEY (`id_estantes`),
-  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_usuario` (`id_usuario`);
+
+--
+-- Índices de tabela `estante_obras`
+--
+ALTER TABLE `estante_obras`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_estantes` (`id_estantes`),
   ADD KEY `id_obras` (`id_obras`);
 
 --
--- Índices para tabela `obras`
+-- Índices de tabela `obras`
 --
 ALTER TABLE `obras`
   ADD PRIMARY KEY (`id_obras`),
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Índices para tabela `temporadas`
+-- Índices de tabela `temporadas`
 --
 ALTER TABLE `temporadas`
   ADD PRIMARY KEY (`id_temporadas`),
   ADD KEY `id_obras` (`id_obras`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -282,7 +319,13 @@ ALTER TABLE `criterios`
 -- AUTO_INCREMENT de tabela `estantes`
 --
 ALTER TABLE `estantes`
-  MODIFY `id_estantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_estantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de tabela `estante_obras`
+--
+ALTER TABLE `estante_obras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `obras`
@@ -303,44 +346,50 @@ ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `avaliacao_detalhada`
+-- Restrições para tabelas `avaliacao_detalhada`
 --
 ALTER TABLE `avaliacao_detalhada`
   ADD CONSTRAINT `avaliacao_detalhada_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
   ADD CONSTRAINT `avaliacao_detalhada_ibfk_2` FOREIGN KEY (`id_obras`) REFERENCES `obras` (`id_obras`);
 
 --
--- Limitadores para a tabela `avaliacao_rapida`
+-- Restrições para tabelas `avaliacao_rapida`
 --
 ALTER TABLE `avaliacao_rapida`
   ADD CONSTRAINT `avaliacao_rapida_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
   ADD CONSTRAINT `avaliacao_rapida_ibfk_2` FOREIGN KEY (`id_obras`) REFERENCES `obras` (`id_obras`);
 
 --
--- Limitadores para a tabela `criterios`
+-- Restrições para tabelas `criterios`
 --
 ALTER TABLE `criterios`
   ADD CONSTRAINT `criterios_ibfk_1` FOREIGN KEY (`id_avaliacao_det`) REFERENCES `avaliacao_detalhada` (`id_avaliacao_det`);
 
 --
--- Limitadores para a tabela `estantes`
+-- Restrições para tabelas `estantes`
 --
 ALTER TABLE `estantes`
-  ADD CONSTRAINT `estantes_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
-  ADD CONSTRAINT `estantes_ibfk_2` FOREIGN KEY (`id_obras`) REFERENCES `obras` (`id_obras`);
+  ADD CONSTRAINT `estantes_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
--- Limitadores para a tabela `obras`
+-- Restrições para tabelas `estante_obras`
+--
+ALTER TABLE `estante_obras`
+  ADD CONSTRAINT `estante_obras_ibfk_1` FOREIGN KEY (`id_estantes`) REFERENCES `estantes` (`id_estantes`),
+  ADD CONSTRAINT `estante_obras_ibfk_2` FOREIGN KEY (`id_obras`) REFERENCES `obras` (`id_obras`);
+
+--
+-- Restrições para tabelas `obras`
 --
 ALTER TABLE `obras`
   ADD CONSTRAINT `obras_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
--- Limitadores para a tabela `temporadas`
+-- Restrições para tabelas `temporadas`
 --
 ALTER TABLE `temporadas`
   ADD CONSTRAINT `temporadas_ibfk_1` FOREIGN KEY (`id_obras`) REFERENCES `obras` (`id_obras`);

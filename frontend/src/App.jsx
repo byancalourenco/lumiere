@@ -35,13 +35,15 @@ import ObrasLivrosADM from "./pagsAdministrador/ObrasLivrosADM.jsx";
 import ObrasSeriesADM from "./pagsAdministrador/ObrasSeriesADM.jsx"
 import IncialADM from "./pagsAdministrador/InicialADM.jsx"
 import InicialADM from "./pagsAdministrador/InicialADM.jsx";
+import CriarEstante from "./CriarEstante.jsx";
+
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home  />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/criarconta" element={<Criarconta />} />
         <Route path="/inicial" element={<Inicial />} />
@@ -68,6 +70,8 @@ function App() {
         <Route path="/obrasLivroADM" element={<ObrasLivrosADM />} />
         <Route path="/obrasSeriesADM" element={<ObrasSeriesADM />} />
         <Route path="/inicialADM" element={<InicialADM />} />
+        <Route path="/criarEstante" element={<CriarEstante />} />
+
       </Routes>
     </BrowserRouter>
   );
