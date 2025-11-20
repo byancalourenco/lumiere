@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 // importa o css
 import "../Cadastrar_Filmes.css";
 
-function AlterarFilme(){ 
+function AlterarSerie(){ 
 
     //constante para pegar a imagem
     const [ImgObra, setImgObra] =useState(null);
@@ -61,7 +61,7 @@ function AlterarFilme(){
 
                 <section>
                     <div className="Box_Tit">
-                        <label className="Tit_Nome_Livro">Nome do filme:</label>
+                        <label className="Tit_Nome_Livro">Nome da Série:</label>
                         <input type="text" className="Box_Tit_Livro" placeholder="Nome do filme" />
                     </div>                    
                 </section>
@@ -149,4 +149,4 @@ function AlterarFilme(){
     )
 }
 
-export default AlterarFilme;
+export default AlterarSerie;

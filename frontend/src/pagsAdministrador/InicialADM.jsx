@@ -1,17 +1,17 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer.jsx";
-import CarouselAvaliacoes from "./components/CarouselAvaliacoes.jsx";
-import './App.css';
-import "./Inicial.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer.jsx";
+import CarouselAvaliacoes from "../components/CarouselAvaliacoes.jsx";
+import '../App.css';
+import "../Inicial.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 
 
-function Inicial(){
+function InicialADM(){
      const { hash } = useLocation();
 
     useEffect(() => {
@@ -84,7 +84,7 @@ function Inicial(){
                             </div>
                             <p>Dê sua opinião sobre grandes histórias!</p>
                             <Link className="btnavaliar" to="/obraslivros">Avaliar</Link>
-                            <Link to="/InicialADM" className="banner-botao">testar alteração!</Link>
+                            
                         </div>
                     </div>
             </div>
@@ -93,4 +93,4 @@ function Inicial(){
 
     )
 }
-export default Inicial;
+export default InicialADM;

@@ -28,7 +28,13 @@ import Temporadas from "./TemporadasDetalhada.jsx";
 import ObrasFilmes from "./ObrasFilmes.jsx";
 import ObrasSeries from "./ObrasSeries.jsx";
 import AlterarFilme from "./pagsAdministrador/AlterarFilme.jsx";
-
+import AlterarLivro from "./pagsAdministrador/AlterarLivro.jsx";
+import AlterarSerie from "./pagsAdministrador/AlterarSerie.jsx";
+import ObrasFilmesADM from "./pagsAdministrador/ObrasFilmesADM.jsx";
+import ObrasLivrosADM from "./pagsAdministrador/ObrasLivrosADM.jsx";
+import ObrasSeriesADM from "./pagsAdministrador/ObrasSeriesADM.jsx"
+import IncialADM from "./pagsAdministrador/InicialADM.jsx"
+import InicialADM from "./pagsAdministrador/InicialADM.jsx";
 
 
 function App() {
@@ -56,6 +62,12 @@ function App() {
         <Route path="/obrasFilmes" element={<ObrasFilmes />} />
         <Route path="/obrasSeries" element={<ObrasSeries />} />
         <Route path="/alterarFilme" element={<AlterarFilme />} />
+        <Route path="/alterarLivro" element={<AlterarLivro />} />
+        <Route path="/alterarSerie" element={<AlterarSerie />} />
+        <Route path="/obrasFilmesADM" element={<ObrasFilmesADM />} />
+        <Route path="/obrasLivroADM" element={<ObrasLivrosADM />} />
+        <Route path="/obrasSeriesADM" element={<ObrasSeriesADM />} />
+        <Route path="/inicialADM" element={<InicialADM />} />
       </Routes>
     </BrowserRouter>
   );

@@ -234,11 +234,6 @@
   background-color: #f4f7fb;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.caixa_criterio:hover{
-  transform: scale(0.9) !important;
 }
 
 .caixa_criterio:focus {

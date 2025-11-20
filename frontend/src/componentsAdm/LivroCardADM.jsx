@@ -1,4 +1,4 @@
-import "./LivroCard.css";
+import "../components/LivroCard.css";
 import { Link } from "react-router-dom";
 
 export default function LivroCardADM({ capa, titulo, estrelas, autor, editora, ano, anoBrasil }) {
@@ -24,7 +24,11 @@ export default function LivroCardADM({ capa, titulo, estrelas, autor, editora, a
           </a>
 
           <ul className="dropdown-menu drop_lista">
-            <li><a className="dropdown-item drop_texto" href="#">Alterar Informações</a></li>
+             <li>
+                <Link className="dropdown-item drop_texto" to="/alterarLivro">
+                Alterar Informações
+                </Link>
+              </li>
             {/* nesta parte de excluir é um select */}
             <li><a className="dropdown-item" href="#">Excluir esta obra</a></li> 
           </ul>

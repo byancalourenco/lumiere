@@ -77,6 +77,8 @@
     height: 250px;
     width: 900px;
     padding: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
     border: 2px solid #333;
     border-radius: 8px;
     outline: none;
@@ -109,17 +111,6 @@
     color: #001A38;
     border: 1px solid #001A38;
     transition: 0.5s;
-}
-
-.botoes_inidicativo{
-  color: #fff;
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  fontSize: 20px;
-  fontWeight: bold;
 }
 
 @media (max-width: 1285px) {

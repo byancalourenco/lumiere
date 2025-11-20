@@ -24,8 +24,12 @@ export default function FilmeCardADM({ capa, titulo, estrelas, diretor, genero, 
           </a>
 
           <ul className="dropdown-menu drop_lista">
-            <li><a className="dropdown-item drop_texto" href="#">Alterar Informações</a></li>
-            {/* nesta parte de excluir é um select */}
+            
+            <li>
+              <Link className="dropdown-item drop_texto" to="/alterarFilme">
+               Alterar Informações
+              </Link>
+            </li>
             <li><a className="dropdown-item" href="#">Excluir esta obra</a></li> 
           </ul>
         </div>
