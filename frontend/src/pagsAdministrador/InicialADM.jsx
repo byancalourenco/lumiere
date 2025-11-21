@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer.jsx";
-import CarouselAvaliacoes from "../components/CarouselAvaliacoes.jsx";
+import CarouselAvaliacoesADM from "../componentsAdm/CarouselAvaliacoesADM";
 import '../App.css';
 import "../Inicial.css";
 import { Link } from "react-router-dom";
@@ -40,7 +40,7 @@ function InicialADM(){
             </div>
 
             <div>
-                <CarouselAvaliacoes />
+                <CarouselAvaliacoesADM />
             </div>
 
             <div id="obras">

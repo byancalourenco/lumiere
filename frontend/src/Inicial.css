@@ -81,6 +81,36 @@ h1, h3{
     width: 50%;
 }
 
+
+/*INICIAL ADM*/
+.botao_lixo{
+    background-color: transparent;
+    border: none;
+}
+
+.botao_lixo:hover{
+     background-color: #d4cfc3 !important;
+}
+
+.botao_lixo:active{
+    background-color: #d4cfc3 !important;
+}
+
+
+.lixinho{
+    color: #001A38;
+    width: 100%;
+}
+
+.lixinho:hover{
+    background-color: #d4cfc3 !important;
+}
+
+.lixinho:active{
+    background-color: #d4cfc3 !important;
+}
+
+
 @media (max-width: 768px) {
     .titulo{
         padding-top: 30px;
