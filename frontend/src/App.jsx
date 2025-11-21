@@ -37,6 +37,9 @@ import ObrasLivrosADM from "./pagsAdministrador/ObrasLivrosADM.jsx";
 import ObrasSeriesADM from "./pagsAdministrador/ObrasSeriesADM.jsx";
 import InicialADM from "./pagsAdministrador/InicialADM.jsx";
 import CriarEstante from "./CriarEstante.jsx";
+import Avaliacoes_Livros from "./Avaliacoes_Livros.jsx";
+import Avaliacoes_Series from "./Avaliacoes_Series.jsx";
+import Avaliacoes_Filmes from "./Avaliacoes_Filmes.jsx";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -102,6 +105,9 @@ function App() {
         <Route path="/obrasSeriesADM" element={<ObrasSeriesADM />} />
         <Route path="/inicialADM" element={<InicialADM />} />
         <Route path="/criarEstante" element={<CriarEstante />} />
+        <Route path="/avaliacoesLivros" element={<Avaliacoes_Livros />} />
+        <Route path="/avaliacoesSeries" element={<Avaliacoes_Series />} />
+        <Route path="/AvaliacoesFilmes" element={<Avaliacoes_Filmes />} />
       </Routes>
     </BrowserRouter>
   );
