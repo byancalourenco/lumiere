@@ -41,6 +41,7 @@ import Avaliacoes_Livros from "./Avaliacoes_Livros.jsx";
 import Avaliacoes_Series from "./Avaliacoes_Series.jsx";
 import Avaliacoes_Filmes from "./Avaliacoes_Filmes.jsx";
 import TrocarSenha from "./TrocarSenha.jsx";
+import PerfilADM from "./pagsAdministrador/PerfilADM.jsx";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -110,6 +111,7 @@ function App() {
         <Route path="/avaliacoesSeries" element={<Avaliacoes_Series />} />
         <Route path="/AvaliacoesFilmes" element={<Avaliacoes_Filmes />} />
         <Route path="/trocarsenha" element={<TrocarSenha />} />
+        <Route path="/perfilADM" element={<PerfilADM />} />
       </Routes>
     </BrowserRouter>
   );
