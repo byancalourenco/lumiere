@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Home.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./Home.css";
 import { Link } from "react-router-dom";
 
 
@@ -17,18 +17,19 @@ export default function Home() {
       <main>
         {/* logo, nome e slogan */}
         <div className="row divlogo align-items-center">
-          <div className="logohome col-md-6">
-            <img className="imglogo" src="/img/logo.png" alt="" />
+          <div className="logohome col-6">
+            <img className="imglogohome" src="/img/logo.png" alt="" />
           </div>
-          <div className="col-md-6">
-            <h1 className="fontecinzel textobranco">LUMIÈRE</h1>
-            <h1 className="fontecinzel textobranco">ENTRE CAPAS E TELAS</h1>
+          <div className="col-6">
+            <h1 className="fontecinzel textobranco titulohome">LUMIÈRE</h1>
+            <h1 className="fontecinzel textobranco titulohome sloganhome">ENTRE CAPAS</h1>
+            <h1 className="fontecinzel textobranco titulohome sloganhome">E TELAS</h1>
           </div>
         </div>
 
         {/* texto, botao e imagem */}
         <div className="row align-items-center">
-          <div className="col-md-6">
+          <div className="col-6 entrardiv">
             <h5 className="diventrar textentrar textobranco">
               Aqui você pode dar sua opinião sobre os filmes, séries e livros
               que marcaram você ou encontrar novas histórias para se apaixonar.
@@ -37,7 +38,7 @@ export default function Home() {
               Entrar
             </Link>
           </div>
-          <div className="col-md-6">
+          <div className="col-6">
             <img
               className="imgcameralivros"
               src="/img/camera e livro.png"

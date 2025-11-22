@@ -110,10 +110,6 @@ function Login() {
             Criar conta
           </Link>
 
-          <Link to="/inicial" className="textobranco" style={{ display: "block", marginTop: "10px" }}>
-            Ir para a página inicial
-          </Link>
-
           <img className="imglogologin" src="/img/logo.png" alt="Logo" />
         </div>
       </div>
