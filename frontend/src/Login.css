@@ -118,6 +118,10 @@
     padding-top: 100px;
 }
 
+.col-md-6{
+    align-items: normal !important;
+}
+
 
 /* criar conta */
 
@@ -175,7 +179,6 @@
 
 
 .perfil-toggle .btn-outline-custom {
-    min-width: 140px;
     text-align: center;
 }
 
@@ -198,5 +201,15 @@
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
         border-top-right-radius: 0px;
+    }
+}
+
+@media (max-width: 400px){
+    .perfil-toggle{
+        display: grid;
+    }
+
+    .btn-outline-custom{
+       max-width: 170px;
     }
 }

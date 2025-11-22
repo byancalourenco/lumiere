@@ -23,7 +23,7 @@ export default function Home() {
           <div className="col-6">
             <h1 className="fontecinzel textobranco titulohome">LUMIÈRE</h1>
             <h1 className="fontecinzel textobranco titulohome sloganhome">ENTRE CAPAS</h1>
-            <h1 className="fontecinzel textobranco titulohome sloganhome">E TELAS</h1>
+            <h1 className="fontecinzel textobranco titulohome sloganhome"> E TELAS</h1>
           </div>
         </div>
 
