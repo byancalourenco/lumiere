@@ -96,12 +96,12 @@ export default function EditarPerfil() {
 
         <p className="data-texto">Cadastrado em: {dataCadastro}</p>
 
-        <button className="editar-btn" onClick={() => navigate("/trocar-senha")}>
-          Trocar senha
-        </button>
-
         <button className="editar-btn" onClick={handleSalvar}>
           Salvar alterações
+        </button>
+
+        <button className="editar-btn" onClick={() => navigate("/TrocarSenha")}>
+          Trocar senha
         </button>
 
         <button className="sair-btn" onClick={handleLogout}>

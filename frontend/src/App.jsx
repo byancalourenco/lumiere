@@ -40,6 +40,7 @@ import CriarEstante from "./CriarEstante.jsx";
 import Avaliacoes_Livros from "./Avaliacoes_Livros.jsx";
 import Avaliacoes_Series from "./Avaliacoes_Series.jsx";
 import Avaliacoes_Filmes from "./Avaliacoes_Filmes.jsx";
+import TrocarSenha from "./TrocarSenha.jsx";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -78,7 +79,7 @@ function App() {
           }
         />
 
-        {/* rotas públicas / administrativas (mantenha como antes) */}
+        {/* rotas públicas */}
         <Route path="/obraslivros" element={<ObrasLivros />} />
         <Route path="/estantes" element={<Estantes />} />
         <Route path="/obrasdetalhes/:tipo" element={<ObrasDetalhes />} />
@@ -108,6 +109,7 @@ function App() {
         <Route path="/avaliacoesLivros" element={<Avaliacoes_Livros />} />
         <Route path="/avaliacoesSeries" element={<Avaliacoes_Series />} />
         <Route path="/AvaliacoesFilmes" element={<Avaliacoes_Filmes />} />
+        <Route path="/trocarsenha" element={<TrocarSenha />} />
       </Routes>
     </BrowserRouter>
   );
