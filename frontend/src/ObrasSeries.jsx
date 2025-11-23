@@ -1,26 +1,34 @@
-// importa a biblioteca do react, faz funcionar os componentes e blablabla
-import React from "react"; 
-import { Link } from "react-router-dom";
-
-// pega os componentes header e cardcontainer da pasta components
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
-import SerieCard from "./components/SerieCard";
+import LivroCard from "./components/LivroCard";
 import Footer from "./components/Footer";
-
-// importa o css
 import "./ObrasLivros.css";
 
-// função principal
 function ObrasSeries() {
+  const [obras, setObras] = useState([]);
+  const [pesquisa, setPesquisa] = useState("");
 
-  // estrutura visual | interface 
+  useEffect(() => {
+    const carregarObras = async () => {
+      try {
+        const resposta = await fetch("http://localhost/backlumiere/obras/listarseries.php");
+        const dados = await resposta.json();
+        setObras(dados);
+      } catch (erro) {
+        console.log("Erro ao carregar obras:", erro);
+      }
+    };
+    carregarObras();
+  }, []);
+
+  const obrasFiltradas = obras.filter((obra) =>
+    obra.titulo.toLowerCase().includes(pesquisa.toLowerCase())
+  );
+
   return (
     <>
-      {/* chama esse componente */}
       <Header />
-
-      {/* area principal da pagina */}
       <main>
         <h1 className="titulo-pagina">SÉRIES</h1>
         <section id="sec-destaques">
@@ -28,16 +36,16 @@ function ObrasSeries() {
           <CardContainer />
           <div className="pesquisa-container">
             <p className="texto-pesquisa">
-              Pesquise uma obra para avaliar <br /> ou ver as avaliações feitas!
+              Pesquise uma série para avaliar <br /> ou ver as avaliações feitas!
             </p>
-
             <div className="linha"></div>
-
             <div className="campo-pesquisa">
               <input
                 type="text"
                 placeholder="Pesquisar"
                 className="input-pesquisa"
+                value={pesquisa}
+                onChange={(e) => setPesquisa(e.target.value)}
               />
               <button className="botao-pesquisa">
                 <span className="material-icons">search</span>
@@ -45,40 +53,30 @@ function ObrasSeries() {
             </div>
           </div>
           <div className="banner-cadastro">
-
-              <div className="banner-textos">
-                <p className="banner-frase">
-                  Sentiu falta de alguma obra? <br />
-                  Cadastre ela no nosso sistema!
-                </p>
-
-                <Link to="/cadastrarObras" className="banner-botao">Cadastrar uma nova obra!</Link>
-              </div>
+            <div className="banner-textos">
+              <p className="banner-frase">
+                Sentiu falta de alguma série? <br /> Cadastre ela no nosso sistema!
+              </p>
+              <button className="banner-botao" onClick={() => (window.location.href = "")}>
+                Cadastrar uma nova série!
+              </button>
+            </div>
           </div>
-          <div className="filtros-container">
-              <select className="filtro-select">
-                <option>Filtro 1</option>
-              </select>
 
-              <select className="filtro-select">
-                <option>Filtro 2</option>
-              </select>
-
-              <select className="filtro-select">
-                <option>Filtro 3</option>
-              </select>
-          </div>
-          <SerieCard
-            capa="https://br.web.img2.acsta.net/pictures/19/07/10/20/01/2331295.jpg"
-            titulo="Stranger Things"
-            estrelas={5}
-            diretor="Irmãos Duffer"
-            lancamento="15 de julho de 2016 (EUA)"
-            tipo="serie"
-          />
+          {obrasFiltradas.map((obra) => (
+            <LivroCard
+              key={obra.id_obras}
+              capa={`http://localhost/backlumiere/uploads/${obra.capa}`}
+              titulo={obra.titulo}
+              estrelas={4}
+              autor={obra.autor}
+              editora={obra.editora || "-"}
+              ano={obra.ano_lancamento.substring(0, 4)}
+              tipo="serie"
+            />
+          ))}
         </section>
       </main>
-
       <Footer />
     </>
   );

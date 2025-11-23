@@ -9,7 +9,6 @@ import Footer from "../components/Footer";
 
 // importa o css
 import "../Cadastrar_Filmes.css";
-import "../Cadastrar_Livros.css";
 
 function AlterarLivro() {
   const [ImgObra, setImgObra] = useState(null); // armazena imagem nova

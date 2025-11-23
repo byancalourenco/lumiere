@@ -1,26 +1,34 @@
-// importa a biblioteca do react, faz funcionar os componentes e blablabla
-import React from "react"; 
-import { Link } from "react-router-dom";
-
-// pega os componentes header e cardcontainer da pasta components
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
-import FilmeCard from "./components/FilmeCard";
+import LivroCard from "./components/LivroCard";
 import Footer from "./components/Footer";
-
-// importa o css
 import "./ObrasLivros.css";
 
-// função principal
 function ObrasFilmes() {
+  const [obras, setObras] = useState([]);
+  const [pesquisa, setPesquisa] = useState("");
 
-  // estrutura visual | interface 
+  useEffect(() => {
+    const carregarObras = async () => {
+      try {
+        const resposta = await fetch("http://localhost/backlumiere/obras/listarfilmes.php");
+        const dados = await resposta.json();
+        setObras(dados);
+      } catch (erro) {
+        console.log("Erro ao carregar obras:", erro);
+      }
+    };
+    carregarObras();
+  }, []);
+
+  const obrasFiltradas = obras.filter((obra) =>
+    obra.titulo.toLowerCase().includes(pesquisa.toLowerCase())
+  );
+
   return (
     <>
-      {/* chama esse componente */}
       <Header />
-
-      {/* area principal da pagina */}
       <main>
         <h1 className="titulo-pagina">FILMES</h1>
         <section id="sec-destaques">
@@ -28,16 +36,16 @@ function ObrasFilmes() {
           <CardContainer />
           <div className="pesquisa-container">
             <p className="texto-pesquisa">
-              Pesquise uma obra para avaliar <br /> ou ver as avaliações feitas!
+              Pesquise um filme para avaliar <br /> ou ver as avaliações feitas!
             </p>
-
             <div className="linha"></div>
-
             <div className="campo-pesquisa">
               <input
                 type="text"
                 placeholder="Pesquisar"
                 className="input-pesquisa"
+                value={pesquisa}
+                onChange={(e) => setPesquisa(e.target.value)}
               />
               <button className="botao-pesquisa">
                 <span className="material-icons">search</span>
@@ -45,40 +53,30 @@ function ObrasFilmes() {
             </div>
           </div>
           <div className="banner-cadastro">
-
-              <div className="banner-textos">
-                <p className="banner-frase">
-                  Sentiu falta de alguma obra? <br />
-                  Cadastre ela no nosso sistema!
-                </p>
-
-                <Link to="/cadastrarObras" className="banner-botao">Cadastrar uma nova obra!</Link>
-              </div>
+            <div className="banner-textos">
+              <p className="banner-frase">
+                Sentiu falta de algum filme? <br /> Cadastre ele no nosso sistema!
+              </p>
+              <button className="banner-botao" onClick={() => (window.location.href = "")}>
+                Cadastrar um novo filme!
+              </button>
+            </div>
           </div>
-          <div className="filtros-container">
-              <select className="filtro-select">
-                <option>Filtro 1</option>
-              </select>
 
-              <select className="filtro-select">
-                <option>Filtro 2</option>
-              </select>
-
-              <select className="filtro-select">
-                <option>Filtro 3</option>
-              </select>
-          </div>
-          <FilmeCard
-            capa="https://br.web.img2.acsta.net/medias/nmedia/18/93/88/04/20282944.jpg"
-            titulo="Harry Potter e o Prisioneiro de Azkaban"
-            estrelas={5}
-            diretor="Alfonso Cuarón"
-            lancamento="4 de junho de 2004 (Brasil)"
-            tipo="filme"
-          />
+          {obrasFiltradas.map((obra) => (
+            <LivroCard
+              key={obra.id_obras}
+              capa={`http://localhost/backlumiere/uploads/${obra.capa}`}
+              titulo={obra.titulo}
+              estrelas={4}
+              autor={obra.autor}
+              editora={obra.editora || "-"}
+              ano={obra.ano_lancamento.substring(0, 4)}
+              tipo="filme"
+            />
+          ))}
         </section>
       </main>
-
       <Footer />
     </>
   );

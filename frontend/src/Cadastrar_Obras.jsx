@@ -36,12 +36,12 @@ function Cadastrar_Obras(){
                     <div className="grid-container_scd">
                         <div className="grid-item-left-second">
                             <div className="first_button">
-                                <Link className="btn-pri" to="/cadastrarLivros">Livro</Link>
+                                <Link className="btn-pri" to="/cadastrarSeries">Livro</Link>
                             </div>
                         </div>
                         <div className="grid-item-centre-second">
                             <div className="second_button">
-                                <Link className="btn-scd" to="/cadastrarFilmes">Filme</Link>
+                                <Link className="btn-scd" to="/cadastrarSeries">Filme</Link>
                             </div>
                         </div>
                         <div className="grid-item-right-second">

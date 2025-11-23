@@ -11,7 +11,7 @@ import './App.css';
 
 function Estantes() {
   const [estantes, setEstantes] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost/backlumiere/estantes/listar.php")
@@ -20,7 +20,7 @@ function Estantes() {
         if (!Array.isArray(data)) return;
 
         const estantesFormatadas = data.map((estante) => ({
-          id: estante.id_estante,
+          id: estante.id_estantes,
           tituloSaga: estante.nome_estante,
           livrosCarrossel: estante.obras?.map((obra) => {
             const capa = obra.capa
@@ -82,24 +82,31 @@ function Estantes() {
       alert("Erro ao se comunicar com o servidor.");
     }
   };
+  console.log(estantes);
 
   return (
     <div className="EstanteTeste">
       <Header />
       <h2 className="text-center my-4 estante-titulo">ESTANTES</h2>
 
-      {estantes.map((dados) => (
-        <EstanteLivros
-          key={dados.id}
-          tituloSaga={dados.tituloSaga}
-          livrosCarrossel={dados.livrosCarrossel}
-          obrasDetalhe={dados.obrasDetalhe}
-          setObrasDetalhe={(novasObras) => {
-            setEstantes(prev => prev.map(est => est.id === dados.id ? {...est, obrasDetalhe: novasObras} : est));
-          }}
-          onExcluir={(idObra) => handleExcluirObra(dados.id, idObra)}
-        />
-      ))}
+      {estantes.map((dados) => {
+        console.log("ID recebido:", dados.id);
+        return (
+          <EstanteLivros
+            key={dados.id}
+            idEstante={dados.id}
+            tituloSaga={dados.tituloSaga}
+            livrosCarrossel={dados.livrosCarrossel}
+            obrasDetalhe={dados.obrasDetalhe}
+            setObrasDetalhe={(novasObras) => {
+              setEstantes(prev => prev.map(est =>
+                est.id === dados.id ? { ...est, obrasDetalhe: novasObras } : est
+              ));
+            }}
+          />
+        );
+      })}
+
 
       <div className="text-center mt-4 ">
         <Button className="btn-editar-estante mb-5" onClick={() => navigate("/criarEstante")} >

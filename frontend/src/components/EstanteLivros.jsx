@@ -1,13 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Card, Button, Collapse } from 'react-bootstrap';
-import { useNavigate } from "react-router-dom"; // <-- adicionado
+import { useNavigate } from "react-router-dom";
 
-// componente da estrela 
 const StarIcon = ({ color, size = 14 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill={color}     // pega a cor que vem de fora
+    fill={color}
     width={size}
     height={size}
   >
@@ -15,7 +14,6 @@ const StarIcon = ({ color, size = 14 }) => (
   </svg>
 );
 
-// componente que mostra 5 estrelas
 const Estrelas = ({ rating = 5 }) => (
   <div className="d-flex align-items-center mb-1">
     {[...Array(5)].map((_, i) => (
@@ -24,7 +22,6 @@ const Estrelas = ({ rating = 5 }) => (
   </div>
 );
 
-// componente que mostra cada obra dentro do accordion
 const ItemObra = ({ obra }) => (
   <Row className="obra-item py-3 align-items-center border-bottom border-light">
     <Col xs={4} sm={2} className="d-flex justify-content-center">
@@ -43,17 +40,21 @@ const ItemObra = ({ obra }) => (
       </p>
       <div className="mt-2">
         <Button className="btn-editar-estante me-2" size="sm">Avaliar</Button>
-        <Button className="btn-editar-estante" size="sm">Excluir</Button>
       </div>
     </Col>
   </Row>
 );
 
-// componente principal
-const EstanteLivros = ({ tituloSaga, livrosCarrossel, obrasDetalhe }) => {
+const EstanteLivros = ({
+  idEstante,
+  tituloSaga,
+  livrosCarrossel,
+  obrasDetalhe,
+  setObrasDetalhe
+}) => {
   const [open, setOpen] = useState(false);
   const sliderRef = useRef(null);
-  const navigate = useNavigate(); // <-- adicionado
+  const navigate = useNavigate();
 
   const scrollSlider = (direction) => {
     const value = direction === "left" ? -230 : 230;
@@ -62,10 +63,12 @@ const EstanteLivros = ({ tituloSaga, livrosCarrossel, obrasDetalhe }) => {
 
   return (
     <Container fluid className="estante-container p-0">
+
       <div className="carousel-wrapper">
         <button className="carousel-nav-btn left" onClick={() => scrollSlider("left")}>
           &#9664;
         </button>
+
         <div
           className="slider-container d-flex flex-nowrap overflow-auto p-3 hide-scrollbar"
           ref={sliderRef}
@@ -78,6 +81,7 @@ const EstanteLivros = ({ tituloSaga, livrosCarrossel, obrasDetalhe }) => {
             </div>
           ))}
         </div>
+
         <button className="carousel-nav-btn right" onClick={() => scrollSlider("right")}>
           &#9654;
         </button>
@@ -97,11 +101,16 @@ const EstanteLivros = ({ tituloSaga, livrosCarrossel, obrasDetalhe }) => {
       <Collapse in={open}>
         <div className="card-obras">
           <h4 className="mb-4 mt-2 ms-5 fw-bold">Obras:</h4>
+
           {obrasDetalhe.map((obra) => (
             <ItemObra key={obra.id} obra={obra} />
           ))}
-          <div className="text-center mt-4 ">
-            <Button className="btn-editar-estante mb-5" onClick={() => navigate("/editarEstante")} >
+
+          <div className="text-center mt-4">
+            <Button
+              className="btn-editar-estante mb-5"
+              onClick={() => navigate(`/editarEstante/${idEstante}`)}
+            >
               Editar Estante
             </Button>
           </div>

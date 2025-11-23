@@ -1,7 +1,17 @@
 import "../components/LivroCard.css";
 import { Link } from "react-router-dom";
 
-export default function FilmeCardADM({ capa, titulo, estrelas, diretor, genero, lancamento }) {
+export default function FilmeCardADM({
+  id,         
+  capa,
+  titulo,
+  estrelas,
+  diretor,
+  genero,
+  lancamento,
+  onExcluir,  
+  disabled    
+}) {
   return (
     <div className="livro-card">
       <img src={capa} alt={titulo} className="livro-capa" />
@@ -17,30 +27,38 @@ export default function FilmeCardADM({ capa, titulo, estrelas, diretor, genero, 
         <p><strong>Gênero:</strong> {genero}</p>
         <p><strong>Data de lançamento:</strong> {lancamento}</p>
 
-        
         <div className="dropdown">
-          <a className="btn btn-secondary dropdown-toggle drop_container" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button
+            className="btn btn-secondary dropdown-toggle drop_container"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Quero gerenciar esse filme!
-          </a>
+          </button>
 
           <ul className="dropdown-menu drop_lista">
-            
             <li>
-              <Link className="dropdown-item drop_texto" to="/alterarFilme">
-               Alterar Informações
+              <Link
+                className="dropdown-item drop_texto"
+                to={`/editarObra/${id}`} 
+              >
+                Alterar Informações
               </Link>
             </li>
-            <li><a className="dropdown-item" href="#">Excluir esta obra</a></li> 
+            <li>
+              <button
+                type="button"
+                className="dropdown-item"
+                onClick={onExcluir}
+                disabled={disabled}
+              >
+                {disabled ? "Excluindo..." : "Excluir esta obra"}
+              </button>
+            </li>
           </ul>
         </div>
-        
-        
-        {/* <Link className="livro-btn" to="/obrasDetalhes">
-          Quero gerenciar esse livro!
-        </Link > */}
       </div>
     </div>
   );
 }
-
-

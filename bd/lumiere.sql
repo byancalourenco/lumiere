@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/11/2025 às 21:56
+-- Tempo de geração: 23/11/2025 às 03:18
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -44,7 +44,6 @@ CREATE TABLE `avaliacao_detalhada` (
 --
 
 INSERT INTO `avaliacao_detalhada` (`id_avaliacao_det`, `nota`, `comentario`, `opiniao`, `data_avaliacao_det`, `id_usuario`, `id_obras`) VALUES
-(1, 9, 'Filme incrível, fotografia impecável!', 'Sim', '2025-10-30 12:04:39', 1, 3),
 (2, 7, 'Gostei, mas esperava mais do final.', 'Mais ou menos', '2025-10-30 12:04:39', 3, 2),
 (3, 10, 'Um clássico, simplesmente perfeito.', 'Sim', '2025-10-30 12:04:39', 4, 1),
 (4, 8, 'História envolvente e emocionante.', 'Sim', '2025-10-30 12:04:39', 2, 4),
@@ -73,7 +72,6 @@ CREATE TABLE `avaliacao_rapida` (
 INSERT INTO `avaliacao_rapida` (`id_avaliacao_rap`, `nota`, `comentario`, `opiniao`, `data_avaliacao_rap`, `id_usuario`, `id_obras`) VALUES
 (1, 10, 'Maravilhoso!', 'Sim', '2025-10-30 12:05:12', 1, 1),
 (2, 5, 'Não gostei muito.', 'Não', '2025-10-30 12:05:12', 2, 2),
-(3, 8, 'Bem interessante.', 'Sim', '2025-10-30 12:05:12', 3, 3),
 (4, 9, 'Excelente produção.', 'Sim', '2025-10-30 12:05:12', 4, 4),
 (5, 7, 'Bom, mas um pouco longo.', 'Mais ou menos', '2025-10-30 12:05:12', 5, 5);
 
@@ -116,16 +114,9 @@ CREATE TABLE `estantes` (
 
 INSERT INTO `estantes` (`id_estantes`, `nome_estante`, `descricao`, `id_usuario`) VALUES
 (1, 'Favoritos', 'Obras que mais gostei.', 1),
-(2, 'Para assistir', 'Filmes e séries que quero ver.', 2),
-(3, 'Clássicos', 'Obras antigas e marcantes.', 3),
-(4, 'Romances', 'Filmes e livros românticos.', 4),
-(5, 'Fantasia', 'Histórias com mundos mágicos.', 5),
-(6, '', '', 1),
-(7, 'aa', 'aa', 1),
-(8, 'aaaaaaaaa', 'aaaaaaaaaaaa', 1),
-(10, 'aamo', 'eu vei', NULL),
-(11, 'quero frango', 'amo', NULL),
-(12, 'aaaaaaaaaaaaaaaaa', 'aaaaaaaaaa', NULL);
+(2, 'Me Identifico', 'Filmes que são a minha cara.', 2),
+(3, 'Clássicosss', 'Obras antigas e marcantes.s', 3),
+(27, 'Musicais', 'musicais amo', NULL);
 
 -- --------------------------------------------------------
 
@@ -144,13 +135,18 @@ CREATE TABLE `estante_obras` (
 --
 
 INSERT INTO `estante_obras` (`id`, `id_estantes`, `id_obras`) VALUES
-(1, 1, 1),
-(2, 1, 3),
-(3, 1, 5),
-(4, 2, 2),
-(5, 2, 4),
-(6, 3, 3),
-(7, 3, 5);
+(46, 3, 5),
+(47, 3, 2),
+(48, 1, 1),
+(49, 1, 5),
+(50, 1, 10),
+(55, 27, 5),
+(56, 27, 4),
+(57, 27, 30),
+(58, 27, 28),
+(70, 2, 4),
+(71, 2, 28),
+(72, 2, 30);
 
 -- --------------------------------------------------------
 
@@ -166,6 +162,7 @@ CREATE TABLE `obras` (
   `ano_lancamento` datetime NOT NULL,
   `autor` varchar(255) NOT NULL,
   `capa` varchar(300) DEFAULT NULL,
+  `editora` varchar(255) DEFAULT NULL,
   `data_cadastro` datetime DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -174,12 +171,14 @@ CREATE TABLE `obras` (
 -- Despejando dados para a tabela `obras`
 --
 
-INSERT INTO `obras` (`id_obras`, `titulo`, `tipo`, `descricao`, `ano_lancamento`, `autor`, `capa`, `data_cadastro`, `id_usuario`) VALUES
-(1, 'Jantar secreto', 'Livro', 'Pobres que precisam de dinheiro fazem jantares canibais.', '2015-07-29 00:00:00', 'Raphael Montes', 'senhor.jpg', '2025-10-30 12:03:50', 1),
-(2, 'Stranger Things', 'Série', 'Crianças enfrentam mistérios sobrenaturais em Hawkins.', '2016-07-15 00:00:00', 'Irmãos Duffer', 'stranger.jpg', '2025-10-30 12:03:50', 2),
-(3, 'Interestelar', 'Filme', 'Um grupo viaja por buracos de minhoca em busca de um novo lar para a humanidade.', '2014-11-07 00:00:00', 'Christopher Nolan', 'interestelar.jpg', '2025-10-30 12:03:50', 2),
-(4, 'Wicked', 'Filme', 'Bruxa verde e rosa sendo amigas.', '2024-11-22 00:00:00', 'Jon M. Chu', 'wicked.jpg', '2025-10-30 12:03:50', 3),
-(5, 'La La Land', 'Filme', 'Um pianista e uma atriz vivem um romance em Los Angeles.', '2016-12-09 00:00:00', 'Damien Chazelle', 'lalaland.png', '2025-10-30 12:03:50', 4);
+INSERT INTO `obras` (`id_obras`, `titulo`, `tipo`, `descricao`, `ano_lancamento`, `autor`, `capa`, `editora`, `data_cadastro`, `id_usuario`) VALUES
+(1, 'Jantar secreto', 'Livro', 'Pobres que precisam de dinheiro fazem jantares canibais.', '2015-07-29 00:00:00', 'Raphael Montes', 'senhor.jpg', 'Companhia das Letras', '2025-10-30 12:03:50', 1),
+(2, 'Stranger Things', 'Série', 'Crianças enfrentam mistérios sobrenaturais em Hawkins.', '2016-07-15 00:00:00', 'Irmãos Duffer', 'stranger.jpg', NULL, '2025-10-30 12:03:50', 2),
+(4, 'Wicked', 'Filme', 'Bruxa verde e rosa sendo amigas.', '2024-11-22 00:00:00', 'Jon M. Chu', 'wicked.jpg', NULL, '2025-10-30 12:03:50', 3),
+(5, 'La La Land', 'Filme', 'Um pianista e uma atriz vivem um romance em Los Angeles.', '2016-12-09 00:00:00', 'Damien Chazelle', 'lalaland.png', NULL, '2025-10-30 12:03:50', 4),
+(10, 'Noiva Cadaver', 'Filme', 'As famílias de Victor e Victoria estão arranjando seu casamento. Nervoso com a cerimônia, Victor vai sozinho à floresta para ensaiar seus votos. No entanto, o que ele pensava ser um tronco de árvore na verdade é o braço esquelético de Emily, uma noiva que foi assassinada depois de fugir com seu amor. Convencida que Victor acabara de lhe pedir a mão em casamento, Emily o leva para o mundo dos mortos, mas ele precisa retornar rapidamente antes que Victoria se case com o malvado Lorde Barkis.', '2005-10-21 00:00:00', 'Tim Burton', '6920f63de802f_noivacadaver.jpeg', NULL, '2025-11-21 20:31:09', 1),
+(28, 'She-Ra e as Princesas do Poder', 'Série', 'A soldado Adora encontra uma espada mágica e se torna a heroína She-Ra. A jovem se junta à Rebelião, mas sua melhor amiga fica do lado da Horda do Mal.', '2018-11-13 00:00:00', 'ND Stevenson', '69223b9471dca_shera.jpg', '', '2025-11-22 19:39:16', 1),
+(30, 'Miraculous: As Aventuras de Ladybug', 'Série', 'A super-heroína Marinette, mais conhecida como Ladybug, e seu parceiro Adrien, famoso pelo nome de Cat Noir, têm a missão de salvar a cidade de Paris de um misterioso vilão, mantendo sigilo sobre suas identidades secretas.', '2015-09-01 00:00:00', ' Thomas Astruc', '69223d68eaf35_miraculous.jpg', '', '2025-11-22 19:47:04', 1);
 
 -- --------------------------------------------------------
 
@@ -203,7 +202,9 @@ INSERT INTO `temporadas` (`id_temporadas`, `numero_temp`, `numero_eps`, `id_obra
 (2, 2, 9, 2),
 (3, 3, 8, 2),
 (4, 4, 9, 2),
-(5, 5, 8, 2);
+(5, 5, 8, 2),
+(12, 5, 53, 28),
+(13, 5, 130, 30);
 
 -- --------------------------------------------------------
 
@@ -229,7 +230,9 @@ INSERT INTO `usuarios` (`id_usuario`, `nome`, `email`, `senha`, `data_cadastro`,
 (2, 'Carlos Souza', 'carlos.souza@example.com', '123456', '2025-10-30 11:58:04', 'Administrador'),
 (3, 'Maria Oliveira', 'maria.oliveira@example.com', 'senha789', '2025-10-30 11:58:04', 'Avaliador'),
 (4, 'João Pereira', 'joao.pereira@example.com', 'abc123', '2025-10-30 11:58:04', 'Avaliador'),
-(5, 'Beatriz Krisan', 'beatriz.krisan@example.com', 'teste2025', '2025-10-30 11:58:04', 'Administrador');
+(5, 'Beatriz Krisan', 'beatriz.krisan@example.com', 'teste2025', '2025-10-30 11:58:04', 'Administrador'),
+(6, 'Ana Clara Rivas', 'anaclararivasbronzeri@gmail.com', '123456', '2025-11-21 19:02:23', 'Avaliador'),
+(7, 'Ana ADM', 'abronzeririvas@gmail.com', '1234567', '2025-11-22 23:14:10', 'Administrador');
 
 --
 -- Índices para tabelas despejadas
@@ -319,31 +322,31 @@ ALTER TABLE `criterios`
 -- AUTO_INCREMENT de tabela `estantes`
 --
 ALTER TABLE `estantes`
-  MODIFY `id_estantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_estantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `estante_obras`
 --
 ALTER TABLE `estante_obras`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT de tabela `obras`
 --
 ALTER TABLE `obras`
-  MODIFY `id_obras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_obras` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `temporadas`
 --
 ALTER TABLE `temporadas`
-  MODIFY `id_temporadas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_temporadas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas

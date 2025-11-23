@@ -18,8 +18,6 @@ import EditarPerfil from "./EditarPerfil.jsx";
 import ObrasDetalhes from "./ObrasDetalhes.jsx";
 import Cadastrar_Obras from "./Cadastrar_Obras.jsx";
 import Cadastrar_Series from "./Cadastrar_Series.jsx";
-import Cadastrar_Filmes from "./Cadastrar_Filmes.jsx";
-import Cadastrar_Livros from "./Cadastrar_Livros.jsx";
 import Escolhe_Avaliacao from "./Escolhe_Avaliacao.jsx";
 import Rapida from "./Rapida.jsx";
 import DetalhadaFilme from "./DetalhadaFilme.jsx";
@@ -31,6 +29,7 @@ import CriterioEmocaoLivro from "./CriterioEmocaoLivro.jsx";
 import Temporadas from "./TemporadasDetalhada.jsx";
 import ObrasFilmes from "./ObrasFilmes.jsx";
 import ObrasSeries from "./ObrasSeries.jsx";
+import EditarObra from "./pagsAdministrador/EditarObra.jsx";
 import AlterarFilme from "./pagsAdministrador/AlterarFilme.jsx";
 import AlterarLivro from "./pagsAdministrador/AlterarLivro.jsx";
 import AlterarSerie from "./pagsAdministrador/AlterarSerie.jsx";
@@ -44,6 +43,8 @@ import Avaliacoes_Series from "./Avaliacoes_Series.jsx";
 import Avaliacoes_Filmes from "./Avaliacoes_Filmes.jsx";
 import TrocarSenha from "./TrocarSenha.jsx";
 import PerfilADM from "./pagsAdministrador/PerfilADM.jsx";
+import EditarEstante from "./EditarEstante";
+
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -87,9 +88,7 @@ function App() {
         <Route path="/obraslivros" element={<ObrasLivros />} />
         <Route path="/estantes" element={<Estantes />} />
         <Route path="/obrasdetalhes/:tipo" element={<ObrasDetalhes />} />
-        <Route path="/cadastrarFilmes" element={<Cadastrar_Filmes />} />
         <Route path="/cadastrarSeries" element={<Cadastrar_Series />} />
-        <Route path="/cadastrarLivros" element={<Cadastrar_Livros />} />
         <Route path="/cadastrarObras" element={<Cadastrar_Obras />} />
         <Route path="/escolheAvaliacao/:tipo" element={<Escolhe_Avaliacao />} />
         <Route path="/rapida" element={<Rapida />} />
@@ -115,6 +114,8 @@ function App() {
         <Route path="/AvaliacoesFilmes" element={<Avaliacoes_Filmes />} />
         <Route path="/trocarsenha" element={<TrocarSenha />} />
         <Route path="/perfilADM" element={<PerfilADM />} />
+        <Route path="/editarEstante/:idEstante" element={<EditarEstante />} />
+        <Route path="/editarobra/:id" element={<EditarObra />} />
       </Routes>
     </BrowserRouter>
   );
