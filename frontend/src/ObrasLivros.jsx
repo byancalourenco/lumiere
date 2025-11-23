@@ -62,7 +62,7 @@ function ObrasLivros() {
               </p>
               <button
                 className="banner-botao"
-                onClick={() => (window.location.href = "")}
+                onClick={() => (window.location.href = "/cadastrarObras")}
               >
                 Cadastrar um novo livro!
               </button>

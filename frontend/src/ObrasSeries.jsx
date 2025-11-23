@@ -57,7 +57,7 @@ function ObrasSeries() {
               <p className="banner-frase">
                 Sentiu falta de alguma série? <br /> Cadastre ela no nosso sistema!
               </p>
-              <button className="banner-botao" onClick={() => (window.location.href = "")}>
+              <button className="banner-botao" onClick={() => (window.location.href = "/cadastrarObras")}>
                 Cadastrar uma nova série!
               </button>
             </div>

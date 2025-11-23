@@ -44,7 +44,8 @@ function Inicial(){
             </div>
 
             <div id="obras" className="divobrasinicial">
-                <h1 style={{textAlign: "center"}}>O que vai avaliar hoje?</h1>
+                <div style={{textAlign: "center"}}><h1>O que vai avaliar hoje?</h1></div>
+                
 
                     <div className="grid text-center cardinicial">
                         <div className="g-col-md-4 g-col-sm-12 cardopicao h-100">

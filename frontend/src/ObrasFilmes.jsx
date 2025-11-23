@@ -57,7 +57,7 @@ function ObrasFilmes() {
               <p className="banner-frase">
                 Sentiu falta de algum filme? <br /> Cadastre ele no nosso sistema!
               </p>
-              <button className="banner-botao" onClick={() => (window.location.href = "")}>
+              <button className="banner-botao" onClick={() => (window.location.href = "/cadastrarObras")}>
                 Cadastrar um novo filme!
               </button>
             </div>

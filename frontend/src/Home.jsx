@@ -144,7 +144,7 @@ export default function Home() {
                 <p className="textobranco">9</p>
                 <p className="textobranco">7</p>
               </div>
-              <div className="g-col-4">
+              <div className="g-col-4 divimgseriehome" >
                 <img
                   style={{
                     width: "100%",
