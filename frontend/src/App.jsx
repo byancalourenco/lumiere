@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import ScrollToTop from "./ScrollToTop";
+
 import Home from "./Home.jsx";
 import Login from "./Login.jsx";
 import EsqueceuSenha from "./EsqueceuSenha.jsx";
@@ -48,6 +50,7 @@ import ProtectedRoute from "./ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

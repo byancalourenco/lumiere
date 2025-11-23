@@ -46,7 +46,7 @@ function Login() {
       </style>
 
       <div className="row">
-        <div className="col-md-6 col-sm-12 entrar divbranca">
+        <div className="col-md-6 col-sm-12 entrar divbranca" style={{alignItems: "normal"}}>
           <h1 className="textoazul" style={{ fontWeight: "700", textAlign: "left" }}>
             Faça seu login
           </h1>
@@ -99,7 +99,7 @@ function Login() {
           </form>
         </div>
 
-        <div className="col-md-6 col-sm-12 criarconta divazul">
+        <div className="col-md-6 col-sm-12 criarconta divazul" style={{alignItems: "normal"}}>
           <h1 className="textobranco textoleft" style={{ fontWeight: "700" }}>
             Ainda não tem uma conta?
           </h1>

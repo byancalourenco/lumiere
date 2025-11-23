@@ -144,8 +144,8 @@ function Cadastrar_Serie(){
                         <button className="btn-cad">Cadastrar Série</button>
                     </div>
                 </section>
-
-            </div>
+                <Footer />
+        </div>
     )
 }
 

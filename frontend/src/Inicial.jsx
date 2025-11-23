@@ -43,7 +43,7 @@ function Inicial(){
                 <CarouselAvaliacoes />
             </div>
 
-            <div id="obras">
+            <div id="obras" className="divobrasinicial">
                 <h1 style={{textAlign: "center"}}>O que vai avaliar hoje?</h1>
 
                     <div className="grid text-center cardinicial">

@@ -144,8 +144,8 @@ function Cadastrar_Filme(){
                         <button className="btn-cad">Confirmar Filme</button>
                     </div>
                 </section>
-
-            </div>
+                <Footer />
+        </div>
     )
 }
 

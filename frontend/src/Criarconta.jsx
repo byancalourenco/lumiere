@@ -45,7 +45,7 @@ function Criarconta() {
   return (
     <div className="container-fluid p-0">
       <div className="row">
-        <div className="col-md-6 col-sm-12 fazerlogin divazul">
+        <div className="col-md-6 col-sm-12 fazerlogin divazul" style={{alignItems: "normal"}}>
           <h1 className="textobranco textoleft" style={{ fontWeight: "700" }}>
             Já possui uma conta?
           </h1>
@@ -59,7 +59,7 @@ function Criarconta() {
           <img className="imglogologin" src="/img/logo.png" alt="" />
         </div>
 
-        <div className="col-md-6 col-sm-12 entrar divbranca">
+        <div className="col-md-6 col-sm-12 entrar divbranca" style={{alignItems: "normal"}}>
           <h1 className="textoazul" style={{ fontWeight: "700", textAlign: "left" }}>
             Crie sua conta
           </h1>
