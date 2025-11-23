@@ -79,7 +79,7 @@ function Avaliacoes_Series(){
                                     <h3>Quero fazer uma avaliação detalhada!</h3>
                                 </div>
                                 <div class="Button_L">
-                                    <Link className="btn-L" to="/detalhada/series">Faça uma avaliação detalhada</Link>
+                                    <Link className="btn-L" to="/detalhada/serie">Faça uma avaliação detalhada</Link>
                                 </div>
                             </div>
                             <div class="box_L">
