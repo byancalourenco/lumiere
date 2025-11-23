@@ -59,7 +59,7 @@ export default function LivroCardHeader({
                     <p><strong>Editora:</strong> {editora}</p>
                     <p><strong>Ano de publicação:</strong> {ano}</p>
 
-                    <Link to="/escolheAvaliacao/livro" className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
+                    <Link to="/avaliacoesLivros" className="btn btn-outline-light align-self-md-start align-self-center btn-quero">
                         Quero avaliar esse livro
                         <i className="bi bi-pencil-square me-2 ms-2"></i>
                     </Link>

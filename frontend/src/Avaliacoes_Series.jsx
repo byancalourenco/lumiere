@@ -58,7 +58,7 @@ function Avaliacoes_Series(){
                                     <h3>Quero fazer uma avaliação rápida!</h3>
                                 </div>
                                 <div class="Button_L">
-                                    <Link className="btn-L" to="">Faça uma avaliação rápida</Link>
+                                    <Link className="btn-L" to="/rapida">Faça uma avaliação rápida</Link>
                                 </div>
                             </div>
                             <div class="box_L">
@@ -79,7 +79,7 @@ function Avaliacoes_Series(){
                                     <h3>Quero fazer uma avaliação detalhada!</h3>
                                 </div>
                                 <div class="Button_L">
-                                    <Link className="btn-L" to="">Faça uma avaliação detalhada</Link>
+                                    <Link className="btn-L" to="/detalhada/series">Faça uma avaliação detalhada</Link>
                                 </div>
                             </div>
                             <div class="box_L">
