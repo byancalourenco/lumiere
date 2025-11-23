@@ -84,4 +84,44 @@
   color: #f4f7fb;
 }
 
+/*FOTO USUARIO*/
+.foto_perfil {
+  width: 150px;              
+  height: 150px;
+  border-radius: 50%;        
+  background: #e0e0e0;       
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;         
+  cursor: pointer;           
+  border: 3px solid #0a1a33;    
+}
+
+.foto_perfil img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;         
+}
+
+.grid-item-left-third {
+  margin-bottom: 15px;
+}
+
+
+@media (max-width: 8000px) {
+    .grid-item-left-third {
+      margin-left: -35px !important;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .grid-item-left-third {
+      margin-left: auto !important;
+    }
+
+}
+
+
 

@@ -41,7 +41,7 @@ function TrocarSenha() {
         navigate("/EditarPerfil");
       }
       
-    //   erro na requisição
+    // erro na requisição
     } catch (erro) {
       alert("Erro ao conectar ao servidor.");
       console.log(erro);

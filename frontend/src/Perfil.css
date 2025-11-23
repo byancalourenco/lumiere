@@ -108,6 +108,7 @@ body {
   overflow: visible !important;
 }
 
+
 @media (max-width: 600px) {
   .perfil-content {
     flex-direction: column;
@@ -120,17 +121,20 @@ body {
   }
 
     .row.row-cols-2 {
-    display: flex;
-    flex-direction: column; /* um embaixo do outro */
-    align-items: center; /* centralizados */
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+    margin-left: 15px !important;
+    margin-right: 50px !important;
   }
 
   .card_botao_perfil {
-    padding: 20px !important; 
+    padding: 5px !important; 
   }
 
   .card_perfil {
-    width: 140% !important; 
+    width: 150% !important; 
     max-width: 500px !important; 
   }
   

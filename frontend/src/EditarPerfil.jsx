@@ -1,4 +1,4 @@
-// src/EditarPerfil.jsx
+// src/EditarPerfil.jsx 
 import React, { useState, useEffect } from "react";
 import "./EditarPerfil.css";
 import Header from "./components/Header";
@@ -74,6 +74,18 @@ export default function EditarPerfil() {
     navigate("/login");
   };
 
+  //constante para pegar a imagem
+      const [ImgUsuario, setImgUsuario] =useState(null);
+      //upload da img:
+      const imagemtrocada = (event)=> {
+          const file = event.target.files[0] //quando a img é escolhida
+              if(file){
+                  //img temporaria 
+                  const imgURL = URL.createObjectURL(file); //pra criar um link pra mostarr na tela, até entrar no banco
+                  setImgUsuario(imgURL); //pra ver ne
+              }
+      };
+
   return (
     <>
       <Header />
@@ -81,7 +93,18 @@ export default function EditarPerfil() {
       <h1 className="titulo-pagina">EDITAR PERFIL</h1>
 
       <div className="editar-container">
-        <div className="editar-foto"></div>
+        
+        <input type="file"  id="upload-file" accept="image/*" style={{display: "none"}} onChange={imagemtrocada}/>
+          <div className="grid-item-left-third grip">
+            <div className="foto_perfil" onClick={() => document.getElementById("upload-file").click()}>
+              {ImgUsuario ? (
+                <img src={ImgUsuario} alt="obra" className="gray-img" />
+              ) : (
+               <img src="/src/assets/img/Lumiere2.png" alt="placeholder" className="img_usu"
+               />)}
+            </div>
+          
+        </div>
 
         <p className="editar-texto">Alterar foto</p>
 

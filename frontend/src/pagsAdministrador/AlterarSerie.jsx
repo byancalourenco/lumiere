@@ -73,13 +73,13 @@ function AlterarSerie(){
                     <div className="grid-container_tdr">
                         <div className="grid-item-left-third">
                             <div className="Gray_Rectangle" onClick={() => document.getElementById("upload-file").click()}>
-                            {ImgObra ? (
-                                <img src={ImgObra} alt="obra" className="gray-img" />
-                            ) : (
-                                <img src="/src/assets/img/Lumiere2.png" alt="placeholder" className="gray-img"
-                                />)}
-                         </div>
-                    </div>
+                                {ImgObra ? (
+                                    <img src={ImgObra} alt="obra" className="gray-img" />
+                                ) : (
+                                    <img src="/src/assets/img/Lumiere2.png" alt="placeholder" className="gray-img"
+                                    />)}
+                            </div>
+                        </div>
                         <div className="grid-item-right-third">
                             <div className="Box_middle">
                                 <div className="Tit_Nome">
